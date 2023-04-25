@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="475dp" />
+        app:layout_constraintGuide_percent=".35" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -39,17 +39,17 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/floatingActionButton"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintVertical_bias="0.242" />
 
     <TextView
         android:id="@+id/TextView_Welcome2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="76dp"
         android:text="Tech Shop"
         android:textColor="@color/dark_blue"
         android:textSize="40sp"
@@ -58,7 +58,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         app:cardCornerRadius="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,9 +76,7 @@
                 android:id="@+id/Input_Email"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="41dp"
                 android:layout_marginTop="48dp"
-                android:layout_marginEnd="41dp"
                 android:background="@drawable/edit_text_bg"
                 android:drawableLeft="@drawable/baseline_email_24"
                 android:drawablePadding="10dp"
@@ -86,7 +84,6 @@
                 android:padding="15dp"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_percent=".8" />
@@ -95,17 +92,14 @@
                 android:id="@+id/Input_Password"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="41dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="41dp"
+                android:layout_marginTop="28dp"
                 android:background="@drawable/edit_text_bg"
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:drawablePadding="10dp"
-                android:hint="Password"
+                android:hint="PassWord"
                 android:padding="15dp"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Input_Email"
                 app:layout_constraintWidth_percent=".8" />
@@ -113,24 +107,24 @@
             <Button
                 android:id="@+id/Button_SignUp"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="41dp"
-                android:layout_marginTop="84dp"
-                android:layout_marginEnd="41dp"
-                android:text="Sign In"
+                android:layout_height="80dp"
+                android:layout_marginTop="30dp"
+                android:padding="15dp"
+                android:text="Sign Up"
+                android:textSize="20sp"
                 app:cornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Input_Password" />
+                app:layout_constraintTop_toBottomOf="@+id/TextView_ForgotPassWord"
+                app:layout_constraintWidth_percent=".8" />
 
             <TextView
-                android:id="@+id/TextView_ForgotPassword"
+                android:id="@+id/TextView_ForgotPassWord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="41dp"
-                android:text="Forgot Password?"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="52dp"
+                android:text="Forgot password?"
                 android:textColor="@color/second_blue"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -156,7 +150,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/TextView_SignUp"
+                    android:id="@+id/TextView_SignIn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
