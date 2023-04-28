@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_profile"
+    android:background="@drawable/bg_profile_1"
     tools:context=".ProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -60,10 +60,11 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="1dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="24dp"
         android:background="@color/blue1"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,11 +93,14 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="50dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="24dp"
         android:background="@color/blue1"
         android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
@@ -121,11 +125,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout3"
+        android:layout_width="350dp"
         android:layout_height="50dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
-        android:orientation="horizontal"
+        android:layout_marginEnd="24dp"
         android:background="@color/blue1"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
@@ -141,12 +149,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Payment Information"
             android:drawableEnd="@drawable/baseline_arrow_forward"
             android:gravity="center"
+            android:text="Payment Information"
             android:textColor="@color/second_blue"
             android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <Button
@@ -154,13 +162,18 @@
         android:layout_width="133dp"
         android:layout_height="59dp"
         android:layout_marginStart="150dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="150dp"
         android:layout_marginBottom="96dp"
+        android:background="@color/blue1"
         android:text="LOG OUT"
-        android:background="@drawable/bg_profile"
+        android:textColor="#0091EA"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
