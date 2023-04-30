@@ -256,44 +256,51 @@
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                android:textAlignment="center">
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_11_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue" />
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_12_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue" />
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_13_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue" />
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_14_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue" />
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_15_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    android:textAlignment="textEnd"
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue" />
                             </LinearLayout>
 
                             <TextView
@@ -334,7 +341,7 @@
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
@@ -343,35 +350,40 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_22_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_23_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_24_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_25_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue"/>
                             </LinearLayout>
 
                             <TextView
@@ -411,7 +423,7 @@
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
@@ -420,35 +432,40 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_32_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_33_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_34_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_35_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue"/>
                             </LinearLayout>
 
                             <TextView
@@ -488,7 +505,7 @@
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
@@ -497,35 +514,40 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_42_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_43_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_44_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_NewItem_45_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue"/>
                             </LinearLayout>
 
                             <TextView
@@ -593,7 +615,7 @@
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
@@ -602,35 +624,40 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_12_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_13_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_14_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_15_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue"/>
                             </LinearLayout>
 
                             <TextView
@@ -671,7 +698,7 @@
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
@@ -680,35 +707,40 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_22_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_23_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_24_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_25_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue"/>
                             </LinearLayout>
 
                             <TextView
@@ -748,7 +780,7 @@
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
@@ -757,35 +789,40 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_32_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_33_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_34_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_35_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue"/>
                             </LinearLayout>
 
                             <TextView
@@ -825,7 +862,7 @@
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
@@ -834,35 +871,40 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_42_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_43_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_44_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_45_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue"/>
                             </LinearLayout>
 
                             <TextView
@@ -940,35 +982,40 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_12_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_13_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_14_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_15_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue"/>
                             </LinearLayout>
 
                             <LinearLayout
@@ -1043,35 +1090,40 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_22_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_23_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_24_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_25_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue"/>
                             </LinearLayout>
 
                             <LinearLayout
@@ -1161,35 +1213,40 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_32_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_33_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_34_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_35_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue"/>
                             </LinearLayout>
 
                             <LinearLayout
@@ -1264,35 +1321,40 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_42_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_43_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_44_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
+                                    app:srcCompat="@drawable/baseline_star_24"
+                                    app:tint="@color/second_blue"/>
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_45_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_half_24" />
+                                    app:srcCompat="@drawable/baseline_star_half_24"
+                                    app:tint="@color/second_blue"/>
                             </LinearLayout>
 
                             <LinearLayout
