@@ -12,6 +12,7 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
         <!--product image-->
+
         <ImageView
             android:id="@+id/image_product"
             android:layout_width="match_parent"
@@ -31,6 +32,7 @@
                 android:layout_margin="25px"
                 android:fontFamily="sans-serif-black"
                 android:text="1.050.000"
+                android:textColor="@color/teal_blue"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="100px"
                 tools:ignore="MissingConstraints" />
@@ -66,11 +68,70 @@
             android:fontFamily="sans-serif-condensed-medium"
             android:text="MSI MPG Trident 3 10SC-005AU Intel i7 10700F, 2060 SUPER, 16GB RAM, 512GB SSD, 2TB HDD, Windows 10 Home, Gaming Keyboard and Mouse 3 Years Warranty Gaming Desktop"
             android:textSize="20sp" />
+        <!--line-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#efefef"
+            tools:ignore="MissingConstraints" />
+        <!--customer review's bar-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--customer review label-->
+            <TextView
+                android:id="@+id/customer_review_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="25px"
+                android:fontFamily="sans-serif-black"
+                android:text="Customer's review"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="17sp"
+                tools:ignore="MissingConstraints" />
+            <!--total label-->
+            <TextView
+                android:id="@+id/total_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="160dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="3"
+                android:textSize="17sp" />
+            <!--see all label-->
+            <TextView
+                android:id="@+id/see_all_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25px"
+                android:fontFamily="sans-serif-medium"
+                android:text="See all"
+                android:textSize="17sp" />
+            <!--see_all_review_arrow-->
+            <ImageView
+                android:id="@+id/arrow_see_all_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25px"
+                android:layout_weight="1"
+                android:backgroundTint="@color/second_blue"
+                app:srcCompat="@drawable/baseline_arrow_forward" />
+
+        </LinearLayout>
+        <!--line-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#efefef"
+            tools:ignore="MissingConstraints" />
+        <!--customer review-->
 
     </LinearLayout>
     <!--add to cart layout-->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout2"
+        android:id="@+id/toolbar_view_product_detail"
         android:layout_width="414dp"
         android:layout_height="41dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -83,15 +144,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             app:backgroundTint="#ffffff">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#efefef"
                     tools:ignore="MissingConstraints" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -134,7 +198,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="14sp"
-                            android:background="@color/second_blue"
+                            android:background="@drawable/add_to_cart_style"
                             android:text="Buy now"
                             android:textColor="#FFFFFF" />
 
@@ -152,7 +216,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="14sp"
-                            android:background="@color/second_blue"
+                            android:background="@drawable/add_to_cart_style"
                             android:text="Add to cart"
                             android:textColor="#FFFFFF" />
                     </LinearLayout>

@@ -227,7 +227,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout2"
+        android:id="@+id/tollbar_view_product_detail"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
