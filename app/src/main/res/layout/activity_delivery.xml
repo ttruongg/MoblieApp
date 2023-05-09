@@ -145,7 +145,7 @@
         android:layout_width="match_parent"
         android:layout_height="318dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/edit_text_bg"
+        android:background="@color/light_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 

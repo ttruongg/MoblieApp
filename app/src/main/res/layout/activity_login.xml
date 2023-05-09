@@ -105,13 +105,14 @@
                 app:layout_constraintWidth_percent=".8" />
 
             <Button
-                android:id="@+id/Button_SignUp"
+                android:id="@+id/Button_Login"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="30dp"
                 android:padding="15dp"
-                android:text="Sign Up"
+                android:text="Log In"
                 android:textSize="20sp"
+                android:background="@color/sky_blue1"
                 app:cornerRadius="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
