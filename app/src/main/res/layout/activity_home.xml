@@ -132,6 +132,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingTop="5dp"
+                            android:clickable="true"
                             app:srcCompat="@drawable/baseline_smartphone_24"
                             app:tint="@color/second_blue" />
 
@@ -612,13 +613,6 @@
                                     app:srcCompat="@drawable/baseline_star_24" />
 
                                 <ImageView
-                                    android:id="@+id/imageView_BestSelling_13_star"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    app:srcCompat="@drawable/baseline_star_24" />
-
-                                <ImageView
                                     android:id="@+id/imageView_BestSelling_14_star"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -641,6 +635,13 @@
                                 android:text="Laptop Samsung"
                                 android:padding="4dp"
                                 android:background="@color/light_blue"/>
+
+                            <ImageView
+                                android:id="@+id/imageView_BestSelling_13_star"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/baseline_star_24" />
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
