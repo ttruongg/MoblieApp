@@ -18,14 +18,14 @@
         android:id="@+id/TextView_Welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="10dp"
         android:text="Welcome"
         android:textColor="@color/dark_blue"
         android:textSize="50sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TextView_Welcome2"
@@ -58,16 +58,16 @@
             android:layout_height="match_parent">
 
             <EditText
-            android:id="@+id/Input_Email"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:background="@drawable/edit_text_bg"
-            android:drawableLeft="@drawable/baseline_email_24"
-            android:drawablePadding="10dp"
-            android:hint="Email"
-            android:padding="15dp"
-            android:textSize="20sp"
+                android:id="@+id/Input_Email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/edit_text_bg"
+                android:drawableLeft="@drawable/baseline_email_24"
+                android:drawablePadding="10dp"
+                android:hint="Email"
+                android:padding="15dp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
