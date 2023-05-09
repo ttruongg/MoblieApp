@@ -23,16 +23,20 @@
         <activity
             android:name=".PaymentActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
         <activity
             android:name=".RegistationActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
