@@ -175,6 +175,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout8"
         android:layout_width="match_parent"
         android:layout_height="91dp"
         android:layout_marginTop="15dp"
@@ -223,124 +224,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="411dp"
         android:layout_height="51dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/tollbar_view_product_detail"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout8" >
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar"
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="2dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView_Home"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/baseline_home_24"
-                        app:tint="@color/second_blue" />
-
-                    <TextView
-                        android:id="@+id/textView_Home"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Home"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView_Notify"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/baseline_notifications_24"
-                        app:tint="@color/second_blue" />
-
-                    <TextView
-                        android:id="@+id/textView_Notify"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Notify"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView_Favorite"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/baseline_favorite_24"
-                        app:tint="@color/second_blue" />
-
-                    <TextView
-                        android:id="@+id/textView_Favorite"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Favorite"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView_Cart"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:tint="@color/second_blue"
-                        app:srcCompat="@drawable/baseline_shopping_cart_24" />
-
-                    <TextView
-                        android:id="@+id/textView_Cart"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Cart"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-            </LinearLayout>
-        </com.google.android.material.bottomappbar.BottomAppBar>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            android:background="@color/light_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/menu_bottom_navigation" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
