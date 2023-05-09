@@ -17,6 +17,8 @@
             android:id="@+id/image_product"
             android:layout_width="match_parent"
             android:layout_height="297dp"
+            android:foreground="@drawable/laptop"
+            app:srcCompat="@drawable/laptop"
             tools:ignore="MissingConstraints"
             tools:srcCompat="@tools:sample/avatars" />
         <!--price format-->
