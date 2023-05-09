@@ -12,10 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".35" />
+        app:layout_constraintGuide_percent=".3" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/floatingActionButton_Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -32,8 +32,8 @@
         android:id="@+id/TextView_Welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="44dp"
         android:text="Just take"
 
         android:textColor="@color/dark_blue"
@@ -80,7 +80,7 @@
                 android:id="@+id/Input_RegisterEmail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/edit_text_bg"
                 android:drawableLeft="@drawable/baseline_email_24"
                 android:drawablePadding="10dp"
@@ -96,7 +96,7 @@
                 android:id="@+id/Input_RegisterPassword"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/edit_text_bg"
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:drawablePadding="10dp"
@@ -108,11 +108,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/Input_RegisterEmail"
                 app:layout_constraintWidth_percent=".8" />
 
+
             <EditText
                 android:id="@+id/Input_ConfirmPassword"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/edit_text_bg"
                 android:drawableLeft="@drawable/baseline_check_circle_24"
                 android:drawablePadding="10dp"
@@ -124,12 +125,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/Input_RegisterPassword"
                 app:layout_constraintWidth_percent=".8" />
 
-
             <Button
                 android:id="@+id/Button_SignUp"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="24dp"
                 android:padding="15dp"
                 android:text="Sign Up"
                 android:textSize="20sp"
