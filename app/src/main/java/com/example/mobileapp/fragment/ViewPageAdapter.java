@@ -5,10 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+public class ViewPageAdapter extends FragmentStatePagerAdapter {
 
 
-    public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+    public ViewPageAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }
 

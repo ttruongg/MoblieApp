@@ -5,48 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_profile_1"
-    tools:ignore="ExtraText">
+    tools:ignore="ExtraText"
+    tools:context=".ViewpageActivity">
 
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="410dp"
-        android:layout_height="250dp"
-        android:background="@drawable/bgip13"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="4dp" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="261dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center_vertical"
-        android:text="Mobile Phone"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="MissingConstraints,RtlCompat" />
-
-    <ScrollView
-        android:layout_width="411dp"
-        android:layout_height="337dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
-
-
-    <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_profile_1"
-        tools:ignore="ExtraText">
+        android:background="@drawable/bg_profile_1">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_Home"
@@ -247,8 +212,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/ImageView_NewItem_1"
@@ -324,8 +289,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/ImageView_NewItem_2"
@@ -379,12 +344,13 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Iphone 14 promax - 512Gb"
+                                    android:background="@color/light_blue"
                                     android:padding="4dp"
-                                    android:background="@color/light_blue"/>
+                                    android:text="Iphone 14 promax - 512Gb" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
+
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -400,8 +366,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/ImgView_NewItem_3"
@@ -456,12 +422,13 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Iphone 14 plus - 128Gb"
+                                    android:background="@color/light_blue"
                                     android:padding="4dp"
-                                    android:background="@color/light_blue"/>
+                                    android:text="Iphone 14 plus - 128Gb" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
+
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -476,8 +443,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/ImgView_NewItem_4"
@@ -531,9 +498,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Iphone 13 promax - 512Gb"
+                                    android:background="@color/light_blue"
                                     android:padding="4dp"
-                                    android:background="@color/light_blue"/>
+                                    android:text="Iphone 13 promax - 512Gb" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
@@ -580,8 +547,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_1_Img"
@@ -635,9 +602,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Iphone 14 promax - 256Gb"
+                                    android:background="@color/light_blue"
                                     android:padding="4dp"
-                                    android:background="@color/light_blue"/>
+                                    android:text="Iphone 14 promax - 256Gb" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
@@ -657,8 +624,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_2_Img"
@@ -712,12 +679,13 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Iphone 14 promax - 256Gb"
+                                    android:background="@color/light_blue"
                                     android:padding="4dp"
-                                    android:background="@color/light_blue"/>
+                                    android:text="Iphone 14 promax - 256Gb" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
+
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -733,8 +701,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_3_Img"
@@ -789,12 +757,13 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Iphone 14 promax - 256Gb"
+                                    android:background="@color/light_blue"
                                     android:padding="4dp"
-                                    android:background="@color/light_blue"/>
+                                    android:text="Iphone 14 promax - 256Gb" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
+
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -810,8 +779,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/imageView_BestSelling_4"
@@ -865,14 +834,15 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Iphone 14 promax - 256Gb"
+                                    android:background="@color/light_blue"
                                     android:padding="4dp"
-                                    android:background="@color/light_blue"/>
+                                    android:text="Iphone 14 promax - 256Gb" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
+
                     <TextView
                         android:id="@+id/textView_Recommend"
                         android:layout_width="wrap_content"
@@ -915,8 +885,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_1_Img"
@@ -968,8 +938,7 @@
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                     <TextView
                                         android:id="@+id/textView_Rec_1_OldPrice"
@@ -977,9 +946,9 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
                                         android:layout_weight="0.5"
+                                        android:foreground="@drawable/strikethrough_foreground"
                                         android:padding="4dp"
-                                        android:text="22.000.000"
-                                        android:foreground="@drawable/strikethrough_foreground"/>
+                                        android:text="22.000.000" />
 
                                     <TextView
                                         android:id="@+id/textView_Rec_1_NewPrice"
@@ -996,12 +965,13 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Iphone 14 promax - 256Gb"
+                                    android:background="@color/light_blue"
                                     android:padding="4dp"
-                                    android:background="@color/light_blue"/>
+                                    android:text="Iphone 14 promax - 256Gb" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
+
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -1017,8 +987,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_2_Img"
@@ -1070,8 +1040,7 @@
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                     <TextView
                                         android:id="@+id/textView_Rec_2_OldPrice"
@@ -1079,9 +1048,9 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
                                         android:layout_weight="0.5"
+                                        android:foreground="@drawable/strikethrough_foreground"
                                         android:padding="4dp"
-                                        android:text="22.000.000"
-                                        android:foreground="@drawable/strikethrough_foreground"/>
+                                        android:text="22.000.000" />
 
                                     <TextView
                                         android:id="@+id/textView_Rec_2_NewPrice"
@@ -1098,14 +1067,15 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Iphone 14 promax - 256Gb"
+                                    android:background="@color/light_blue"
                                     android:padding="4dp"
-                                    android:background="@color/light_blue"/>
+                                    android:text="Iphone 14 promax - 256Gb" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/linearLayout_Row2_Recommed"
                         android:layout_width="match_parent"
@@ -1134,8 +1104,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_3_Img"
@@ -1188,8 +1158,7 @@
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                     <TextView
                                         android:id="@+id/textView_Rec_3_OldPrice"
@@ -1197,9 +1166,9 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
                                         android:layout_weight="0.5"
+                                        android:foreground="@drawable/strikethrough_foreground"
                                         android:padding="4dp"
-                                        android:text="22.000.000"
-                                        android:foreground="@drawable/strikethrough_foreground"/>
+                                        android:text="22.000.000" />
 
                                     <TextView
                                         android:id="@+id/textView_Rec_3_NewPrice"
@@ -1216,12 +1185,13 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Iphone 14 promax - 256Gb"
+                                    android:background="@color/light_blue"
                                     android:padding="4dp"
-                                    android:background="@color/light_blue"/>
+                                    android:text="Iphone 14 promax - 256Gb" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
+
                         <androidx.cardview.widget.CardView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -1237,8 +1207,8 @@
                                 android:orientation="vertical"
                                 android:paddingStart="5dp"
                                 android:paddingTop="8dp"
-                                android:paddingBottom="5dp"
-                                android:paddingEnd="5dp">
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
 
                                 <ImageView
                                     android:id="@+id/imageView_Recommend_4_Img"
@@ -1291,8 +1261,7 @@
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                     <TextView
                                         android:id="@+id/textView_Rec_4_OldPrice"
@@ -1300,9 +1269,9 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
                                         android:layout_weight="0.5"
+                                        android:foreground="@drawable/strikethrough_foreground"
                                         android:padding="4dp"
-                                        android:text="22.000.000"
-                                        android:foreground="@drawable/strikethrough_foreground"/>
+                                        android:text="22.000.000" />
 
                                     <TextView
                                         android:id="@+id/textView_Rec_4_NewPrice"
@@ -1319,9 +1288,9 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:text="Iphone 14 promax - 256Gb"
+                                    android:background="@color/light_blue"
                                     android:padding="4dp"
-                                    android:background="@color/light_blue"/>
+                                    android:text="Iphone 14 promax - 256Gb" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
