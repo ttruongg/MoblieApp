@@ -17,9 +17,9 @@
         <activity
              android:name=".CartActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".ViewpageActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".ViewpageActivity"
+            android:exported="false" />
         <activity
             android:name=".DeliveryActivity"
             android:exported="false" />
@@ -42,7 +42,7 @@
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewpageActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
