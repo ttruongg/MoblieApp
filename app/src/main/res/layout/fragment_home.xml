@@ -241,6 +241,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="60dp"
                                 android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/laptop"
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
@@ -324,6 +325,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="60dp"
                                 android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/laptop"
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
@@ -406,6 +408,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="60dp"
                                 android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/baseline_laptop_24"
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
@@ -488,6 +491,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="60dp"
                                 android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/laptop"
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
@@ -598,6 +602,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="60dp"
                                 android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/baseline_laptop_24"
                                 tools:srcCompat="@drawable/laptop" />
 
                             <LinearLayout
