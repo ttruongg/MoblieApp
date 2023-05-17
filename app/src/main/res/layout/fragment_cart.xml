@@ -108,7 +108,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight=".3"
-                                    android:text="22.000.000VNDgit pú" />
+                                    android:text="22.000.000VND" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
