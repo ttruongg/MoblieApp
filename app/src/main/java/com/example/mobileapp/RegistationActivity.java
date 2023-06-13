@@ -2,24 +2,93 @@ package com.example.mobileapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.mobileapp.model.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
+
+import org.mindrot.jbcrypt.BCrypt;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class RegistationActivity extends AppCompatActivity {
 
     public FloatingActionButton btnBack;
+    public Button btnSignUp;
     public TextView txtSignIn;
+    public EditText inputRegisEmail, inputRegisPass, inputRegisConfirmPass;
+    public boolean isValidEmail(String email) {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+    public boolean checkEmail(String email){
+        CollectionReference usersCollection = db.collection("Users");
+
+        String emailToCheck = email;
+        AtomicBoolean emailExists = new AtomicBoolean(false);
+
+        // Tạo truy vấn để tìm kiếm email
+        Query query = usersCollection.whereEqualTo("email", emailToCheck).limit(1);
+
+        //Truy vấn
+        query.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                // Kiểm tra xem có tồn tại bất kỳ email nào trong kết quả truy vấn hay không
+                emailExists.set(!task.getResult().isEmpty());
+            }
+        });
+        return emailExists.get();
+    }
+    // Kiểm tra password
+    public boolean isPasswordConfirmed(String password, String confirmPassword) {
+        return password.equals(confirmPassword);
+    }
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registation);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.custom_dialog);
+
         btnBack = (FloatingActionButton) findViewById(R.id.floatingActionButton_Back);
+        btnSignUp = (Button) findViewById(R.id.Button_SignUp);
+        inputRegisEmail = (EditText) findViewById(R.id.Input_RegisterEmail);
+        inputRegisPass = (EditText) findViewById(R.id.Input_RegisterPassword);
+        inputRegisConfirmPass = (EditText) findViewById(R.id.Input_ConfirmPassword);
         btnBack.setOnClickListener(
+            new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    startActivity(new Intent(RegistationActivity.this, LoginActivity.class));
+                }
+            }
+        );
+        txtSignIn = (TextView) findViewById(R.id.TextView_SignIn);
+        txtSignIn.setOnClickListener(
                 new View.OnClickListener()
                 {
                     @Override
@@ -29,17 +98,92 @@ public class RegistationActivity extends AppCompatActivity {
                     }
                 }
         );
-        txtSignIn = (TextView) findViewById(R.id.TextView_SignIn);
-        txtSignIn.setOnClickListener(
-                new View.OnClickListener()
+        btnSignUp.setOnClickListener(
+            new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
                 {
-                    @Override
-                    public void onClick(View view)
-                    {
-                        Intent intent_Login = new Intent(RegistationActivity.this, LoginActivity.class);
-                        startActivity(intent_Login);
+                    String email = inputRegisEmail.getText().toString();
+                    String pass = inputRegisPass.getText().toString();
+                    String confirm = inputRegisConfirmPass.getText().toString();
+                    if(isValidEmail(email)){
+                        if(isPasswordConfirmed(pass, confirm)){
+                            if(checkEmail(email)){
+                                //Mã hoá pass
+                                String hashedPassword = BCrypt.hashpw(pass, BCrypt.gensalt(6));
+
+                                //Thêm user
+                                Map<String, Object> user = new HashMap<>();
+                                user.put("Email", email);
+                                user.put("HashedPassword", hashedPassword);
+                                // Add a new document with a generated ID
+
+                                //Thêm user vào db
+                                db.collection("Users").add(user);
+
+                                // thông báo dăng ký thành công
+                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 255, 128)));
+                                TextView textMessage = dialog.findViewById(R.id.text_notify);
+                                textMessage.setText("Register Successfully");
+                                dialog.show();
+
+                                // Đóng Dialog sau vài giây
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        dialog.dismiss();
+                                    }
+                                }, 5000);
+                                // direct to login
+                                startActivity(new Intent(RegistationActivity.this, LoginActivity.class));
+                            }else{
+                                // thông báo dăng ký thất bại
+                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.RED));
+                                TextView textMessage = dialog.findViewById(R.id.text_notify);
+                                textMessage.setText("Email đã tồn tại");
+                                dialog.show();
+
+                                // Đóng Dialog sau vài giây
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        dialog.dismiss();
+                                    }
+                                }, 5000);
+                            }
+                        }else{
+                            // thông báo dăng ký thất bại
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.RED));
+                            TextView textMessage = dialog.findViewById(R.id.text_notify);
+                            textMessage.setText("Sai password");
+                            dialog.show();
+
+                            // Đóng Dialog sau vài giây
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    dialog.dismiss();
+                                }
+                            }, 5000);
+                        }
+                    }else {
+                        // thông báo dăng ký thất bại
+                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.RED));
+                        TextView textMessage = dialog.findViewById(R.id.text_notify);
+                        textMessage.setText("Sai email");
+                        dialog.show();
+
+                        // Đóng Dialog sau vài giây
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                dialog.dismiss();
+                            }
+                        }, 5000);
                     }
                 }
+            }
         );
     }
 }
