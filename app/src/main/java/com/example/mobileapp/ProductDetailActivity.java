@@ -7,20 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ConfirmActivity extends AppCompatActivity {
+public class ProductDetailActivity extends AppCompatActivity {
 
-    Button btnFinish;
 
+    Button btnBuyNow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirm);
-
-        btnFinish = (Button) findViewById(R.id.buttonFinish);
-        btnFinish.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.view_product_detail);
+        btnBuyNow = (Button) findViewById(R.id.button_buy_now);
+        btnBuyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent_Login = new Intent(ConfirmActivity.this, HomeActivity.class);
+                Intent intent_Login = new Intent(ProductDetailActivity.this, DeliveryActivity.class);
                 startActivity(intent_Login);
             }
         });
