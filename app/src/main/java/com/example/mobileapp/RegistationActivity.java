@@ -37,24 +37,6 @@ public class RegistationActivity extends AppCompatActivity {
     public boolean isValidEmail(String email) {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
-    public boolean checkEmail(String email){
-        CollectionReference usersCollection = db.collection("Users");
-
-        String emailToCheck = email;
-        AtomicBoolean emailExists = new AtomicBoolean(false);
-
-        // Tạo truy vấn để tìm kiếm email
-        Query query = usersCollection.whereEqualTo("email", emailToCheck).limit(1);
-
-        //Truy vấn
-        query.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                // Kiểm tra xem có tồn tại bất kỳ email nào trong kết quả truy vấn hay không
-                emailExists.set(!task.getResult().isEmpty());
-            }
-        });
-        return emailExists.get();
-    }
     // Kiểm tra password
     public boolean isPasswordConfirmed(String password, String confirmPassword) {
         return password.equals(confirmPassword);
@@ -66,8 +48,6 @@ public class RegistationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registation);
-
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.custom_dialog);
@@ -107,51 +87,79 @@ public class RegistationActivity extends AppCompatActivity {
                     String email = inputRegisEmail.getText().toString();
                     String pass = inputRegisPass.getText().toString();
                     String confirm = inputRegisConfirmPass.getText().toString();
+
+
                     if(isValidEmail(email)){
                         if(isPasswordConfirmed(pass, confirm)){
-                            if(checkEmail(email)){
-                                //Mã hoá pass
-                                String hashedPassword = BCrypt.hashpw(pass, BCrypt.gensalt(6));
+                            FirebaseFirestore db = FirebaseFirestore.getInstance();
+                            CollectionReference usersCollection = db.collection("Users");
+                            Query query = usersCollection.whereEqualTo("Email", email).limit(1);
 
-                                //Thêm user
-                                Map<String, Object> user = new HashMap<>();
-                                user.put("Email", email);
-                                user.put("HashedPassword", hashedPassword);
-                                // Add a new document with a generated ID
+                            // Thực hiện truy vấn
+                            query.get().addOnCompleteListener(task -> {
+                                if (task.isSuccessful()) {
+                                    boolean emailExists = !task.getResult().isEmpty();
 
-                                //Thêm user vào db
-                                db.collection("Users").add(user);
+                                    if (emailExists) {
+                                        // Email tồn tại trong Firestore
+                                        // thông báo dăng ký thất bại
+                                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.RED));
+                                        TextView textMessage = dialog.findViewById(R.id.text_notify);
+                                        textMessage.setText("Email đã tồn tại");
+                                        dialog.show();
 
-                                // thông báo dăng ký thành công
-                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 255, 128)));
-                                TextView textMessage = dialog.findViewById(R.id.text_notify);
-                                textMessage.setText("Register Successfully");
-                                dialog.show();
+                                        // Đóng Dialog sau vài giây
+                                        new Handler().postDelayed(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                dialog.dismiss();
+                                            }
+                                        }, 5000);
+                                    } else {
+                                        //Mã hoá pass
+                                        String hashedPassword = BCrypt.hashpw(pass, BCrypt.gensalt(6));
 
-                                // Đóng Dialog sau vài giây
-                                new Handler().postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        dialog.dismiss();
+                                        //Thêm user
+                                        Map<String, Object> user = new HashMap<>();
+                                        user.put("Email", email);
+                                        user.put("HashedPassword", hashedPassword);
+                                        // Add a new document with a generated ID
+
+                                        //Thêm user vào db
+                                        db.collection("Users").add(user);
+
+                                        // thông báo dăng ký thành công
+                                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(0, 255, 128)));
+                                        TextView textMessage = dialog.findViewById(R.id.text_notify);
+                                        textMessage.setText("Đăng ký thành công");
+                                        dialog.show();
+
+                                        // Đóng Dialog sau vài giây
+                                        new Handler().postDelayed(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                dialog.dismiss();
+                                            }
+                                        }, 5000);
+                                        // direct to login
+                                        startActivity(new Intent(RegistationActivity.this, LoginActivity.class));
                                     }
-                                }, 5000);
-                                // direct to login
-                                startActivity(new Intent(RegistationActivity.this, LoginActivity.class));
-                            }else{
-                                // thông báo dăng ký thất bại
-                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.RED));
-                                TextView textMessage = dialog.findViewById(R.id.text_notify);
-                                textMessage.setText("Email đã tồn tại");
-                                dialog.show();
+                                } else {
+                                    // thông báo dăng ký thất bại
+                                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.RED));
+                                    TextView textMessage = dialog.findViewById(R.id.text_notify);
+                                    textMessage.setText("Lỗi");
+                                    dialog.show();
 
-                                // Đóng Dialog sau vài giây
-                                new Handler().postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        dialog.dismiss();
-                                    }
-                                }, 5000);
-                            }
+                                    // Đóng Dialog sau vài giây
+                                    new Handler().postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            dialog.dismiss();
+                                        }
+                                    }, 5000);
+                                }
+                            });
                         }else{
                             // thông báo dăng ký thất bại
                             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.RED));
