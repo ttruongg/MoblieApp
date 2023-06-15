@@ -67,9 +67,10 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewConfirm1">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/ListOfProducts"
+                android:id="@+id/ListOfProduct"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
         </androidx.cardview.widget.CardView>
 
 
