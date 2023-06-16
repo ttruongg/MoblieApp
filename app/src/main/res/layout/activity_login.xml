@@ -12,35 +12,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".35" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="24dp"
-        android:clickable="true"
-        app:tint="@color/light_blue"
-        app:backgroundTint="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_arrow_back_ios_new_24"
-        android:contentDescription="Back to Landing Page"/>
+        app:layout_constraintGuide_percent=".3" />
 
     <TextView
         android:id="@+id/TextView_Welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="10dp"
         android:text="Welcome"
         android:textColor="@color/dark_blue"
         android:textSize="50sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TextView_Welcome2"
@@ -73,16 +58,16 @@
             android:layout_height="match_parent">
 
             <EditText
-            android:id="@+id/Input_Email"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:background="@drawable/edit_text_bg"
-            android:drawableLeft="@drawable/baseline_email_24"
-            android:drawablePadding="10dp"
-            android:hint="Email"
-            android:padding="15dp"
-            android:textSize="20sp"
+                android:id="@+id/Input_Email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/edit_text_bg"
+                android:drawableLeft="@drawable/baseline_email_24"
+                android:drawablePadding="10dp"
+                android:hint="Email"
+                android:padding="15dp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -105,13 +90,14 @@
                 app:layout_constraintWidth_percent=".8" />
 
             <Button
-                android:id="@+id/Button_SignUp"
+                android:id="@+id/Button_Login"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="30dp"
                 android:padding="15dp"
-                android:text="Sign Up"
+                android:text="Log In"
                 android:textSize="20sp"
+                android:background="@color/sky_blue1"
                 app:cornerRadius="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +124,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Button_SignUp"
+                app:layout_constraintTop_toBottomOf="@+id/Button_Login"
                 app:layout_constraintVertical_bias="0.016">
 
                 <TextView

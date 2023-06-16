@@ -4,291 +4,1315 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:background="@color/light_blue"
+    tools:ignore="ExtraText"
+    tools:context=".ViewpageActivity">
+
     android:background="@drawable/bg_profile_1"
     tools:ignore="ExtraText">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="428dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/light_blue1">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="410dp"
-            android:layout_height="250dp"
-            android:background="@drawable/bgip13"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="-7dp"
-            tools:layout_editor_absoluteY="0dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <GridView
-        android:id="@+id/gridView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnWidth="100dp"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
-        android:stretchMode="columnWidth"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent"
+        android:background="@color/light_blue">
 
-    <!-- grid_item.xml -->
-    <RelativeLayout
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        tools:ignore="MissingConstraints"
-        android:background="#1c4264">
-
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="261dp"
-        android:layout_height="49dp"
-        android:text="Mobile Phone"
-        android:textAlignment="center"
-        android:gravity="center_vertical"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="255dp"
-        tools:ignore="MissingConstraints,RtlCompat" />
-
-    <ImageView
-        android:id="@id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="135dp"
-        android:background="@drawable/bgip13"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="317dp" />
-
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:background="@color/light_blue"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="452dp"
-        android:text="Price: "
-        android:gravity="center_vertical"
-        tools:ignore="MissingConstraints" />
-
-    <!--Image2-->
-
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/baseline_shopping_cart_24"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="452dp" />
-
-    <ImageView
-        android:id="@id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="135dp"
-        android:background="@drawable/bgip13"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="317dp" />
-
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:background="@color/light_blue"
-        android:gravity="center_vertical"
-        android:text="Price: "
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="452dp" />
-
-    <!--Image3-->
-
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/baseline_shopping_cart_24"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="355dp"
-        tools:layout_editor_absoluteY="452dp" />
-
-    <ImageView
-        android:id="@id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="135dp"
-        android:background="@drawable/bgip13"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="514dp" />
-
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:background="@color/light_blue"
-        android:gravity="center_vertical"
-        android:text="Price: "
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="649dp" />
-
-    <!--Image4-->
-
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/baseline_shopping_cart_24"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="649dp" />
-
-    <ImageView
-        android:id="@id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="135dp"
-        android:background="@drawable/bgip13"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="514dp" />
-
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:background="@color/light_blue"
-        android:gravity="center_vertical"
-        android:text="Price: "
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="649dp" />
-
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/baseline_shopping_cart_24"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="355dp"
-        tools:layout_editor_absoluteY="649dp" />
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar"
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_Home"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom">
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0" />
+
+        <ScrollView
+            android:id="@+id/scrollView_Home"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="User"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline_Home">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="2dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".25"
-                    android:orientation="vertical">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                    <ImageView
-                        android:id="@+id/imageView_Home"
+                    <LinearLayout
+                        android:id="@+id/linearLayout_Categories_Home"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/baseline_home_24"
-                        app:tint="@color/second_blue" />
+                        android:layout_height="65dp"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+                            android:background="@drawable/category_background"
+                            android:elevation="5dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageView_Apple"
+                                android:layout_width="52dp"
+                                android:layout_height="28dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/iphone14"
+                                app:tint="@color/second_blue" />
+
+                            <TextView
+                                android:id="@+id/textView_Apple"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:text="Apple"
+                                android:textAlignment="center"
+                                android:textColor="@color/second_blue"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+                            android:background="@drawable/category_background"
+                            android:elevation="5dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageView_MobileCategory"
+                                android:layout_width="58dp"
+                                android:layout_height="28dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/ss"
+                                android:paddingTop="5dp"
+                                app:tint="@color/second_blue" />
+
+                            <TextView
+                                android:id="@+id/textView_MobileCategory"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="SamSung"
+                                android:textAlignment="center"
+                                android:textColor="@color/second_blue"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+                            android:background="@drawable/category_background"
+                            android:elevation="5dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="58dp"
+                                android:layout_height="28dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/realme"
+                                android:paddingTop="5dp"
+                                app:tint="@color/second_blue" />
+
+                            <TextView
+                                android:id="@+id/textView_SoundCategory"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Real me"
+                                android:textAlignment="center"
+                                android:textColor="@color/second_blue"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+                            android:background="@drawable/category_background"
+                            android:elevation="5dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageView_Mobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:paddingTop="5dp"
+                                app:srcCompat="@drawable/baseline_smartphone_24"
+                                app:tint="@color/second_blue"
+                                tools:ignore="DuplicateIds" />
+
+                            <TextView
+                                android:id="@+id/textView_OtherCategory"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Others"
+                                android:textAlignment="center"
+                                android:textColor="@color/second_blue"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                     <TextView
-                        android:id="@+id/textView_Home"
-                        android:layout_width="match_parent"
+                        android:id="@+id/textView_NewItem_Home"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Home"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_marginTop="12dp"
+                        android:text="Newest Item"
+                        android:textAllCaps="true"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout_Categories_Home" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView_Notify"
+                    <LinearLayout
+                        android:id="@+id/linearLayout_NewItem_Home"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/baseline_notifications_24"
-                        app:tint="@color/second_blue" />
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView_NewItem_Home">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/ImageView_NewItem_1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/Star1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/txtView_NewItem_1_Name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 14 promax - 256Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/ImageView_NewItem_2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/Star6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star8"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star9"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star10"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/txtView_NewItem_2_Name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 14 promax - 512Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/ImgView_NewItem_3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/Star11"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star12"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star13"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star14"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star15"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/txtView_NewItem_3_Name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 14 plus - 128Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/ImgView_NewItem_4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp"
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/Star16"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star17"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star18"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star19"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/Star20"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/txtView_NewItem_4_Name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 13 promax - 512Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
 
                     <TextView
-                        android:id="@+id/textView_Notify"
-                        android:layout_width="match_parent"
+                        android:id="@+id/textView_BestSelling"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Notify"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_marginTop="12dp"
+                        android:text="Best - Selling Product"
+                        android:textAllCaps="true"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout_NewItem_Home" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".25"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView_Favorite"
+                    <LinearLayout
+                        android:id="@+id/linearLayout_BestSelling_Home"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/baseline_favorite_24"
-                        app:tint="@color/second_blue" />
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView_BestSelling">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView_BestSelling_1_Img"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_11_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_12_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_13_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_14_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_15_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView_BestSelling_1_Name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 14 promax - 256Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView_BestSelling_2_Img"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_21_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_22_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_23_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_24_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_25_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView_BestSelling_2_Name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 14 promax - 256Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView_BestSelling_3_Img"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:scaleType="centerCrop"
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_31_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_32_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_33_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_34_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_35_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView_BestSelling_3_Name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 14 promax - 256Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".25"
+
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView_BestSelling_4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_41_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_42_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_43_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_44_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_BestSelling_45_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView_BestSelling_4_Name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 14 promax - 256Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
 
                     <TextView
-                        android:id="@+id/textView_Favorite"
-                        android:layout_width="match_parent"
+                        android:id="@+id/textView_Recommend"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Favorite"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_marginTop="12dp"
+                        android:text="Discount now"
+                        android:textAllCaps="true"
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout_BestSelling_Home" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".25"
-                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/imageView_Cart"
+                    <LinearLayout
+                        android:id="@+id/linearLayout_Row1_Recommed"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:tint="@color/second_blue"
-                        app:srcCompat="@drawable/baseline_shopping_cart_24" />
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView_Recommend">
 
-                    <TextView
-                        android:id="@+id/textView_Cart"
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".5"
+
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView_Recommend_1_Img"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="120dp"
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_11_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_12_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_13_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_14_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_15_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView_Rec_1_OldPrice"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="0.5"
+                                        android:foreground="@drawable/strikethrough_foreground"
+                                        android:padding="4dp"
+                                        android:text="22.000.000" />
+
+                                    <TextView
+                                        android:id="@+id/textView_Rec_1_NewPrice"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"
+                                        android:padding="4dp"
+                                        android:text="22.000.000" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView_Recommend_1_Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 14 promax - 256Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".5"
+
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView_Recommend_2_Img"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="120dp"
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_21_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_22_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_23_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_24_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_25_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView_Rec_2_OldPrice"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="0.5"
+                                        android:foreground="@drawable/strikethrough_foreground"
+                                        android:padding="4dp"
+                                        android:text="22.000.000" />
+
+                                    <TextView
+                                        android:id="@+id/textView_Rec_2_NewPrice"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"
+                                        android:padding="4dp"
+                                        android:text="22.000.000" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/imageView_Recommend_2_Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 14 promax - 256Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_Row2_Recommed"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Cart"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/linearLayout_Row1_Recommed">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".5"
+
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView_Recommend_3_Img"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="120dp"
+                                    android:scaleType="centerCrop"
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_31_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_32_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_33_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_34_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_35_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView_Rec_3_OldPrice"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="0.5"
+                                        android:foreground="@drawable/strikethrough_foreground"
+                                        android:padding="4dp"
+                                        android:text="22.000.000" />
+
+                                    <TextView
+                                        android:id="@+id/textView_Rec_3_NewPrice"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"
+                                        android:padding="4dp"
+                                        android:text="22.000.000" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView_Recommend_3_Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 14 promax - 256Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight=".5"
+
+                            android:background="@drawable/category_background"
+                            app:cardCornerRadius="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView_Recommend_4_Img"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="120dp"
+                                    android:scaleType="centerCrop"
+                                    tools:srcCompat="@drawable/iphone14" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_41_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_42_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_43_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_44_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_24" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView_Recommend_45_star"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@drawable/baseline_star_half_24" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView_Rec_4_OldPrice"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="0.5"
+                                        android:foreground="@drawable/strikethrough_foreground"
+                                        android:padding="4dp"
+                                        android:text="22.000.000" />
+
+                                    <TextView
+                                        android:id="@+id/textView_Rec_4_NewPrice"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.5"
+                                        android:padding="4dp"
+                                        android:text="22.000.000" />
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/imageView_Recommend_4_Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/light_blue"
+                                    android:padding="4dp"
+                                    android:text="Iphone 14 promax - 256Gb" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
-        </com.google.android.material.bottomappbar.BottomAppBar>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </ScrollView>
 
+        =======
+
+        <!--Image2-->
+
+        <!--Image3-->
+
+        <!--Image4-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
