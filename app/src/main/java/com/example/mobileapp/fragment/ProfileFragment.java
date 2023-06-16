@@ -82,8 +82,8 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        String userid = getUserID();
-        LoadInfo(userid);
+        String userEmail = getEmail();
+        LoadInfo(userEmail);
 
 
 
@@ -114,7 +114,7 @@ public class ProfileFragment extends Fragment {
     }
 
 
-    private String getUserID() {
+    private String getEmail() {
         SharedPreferences preferences = getActivity().getSharedPreferences("UserEmail", Context.MODE_PRIVATE);
         return preferences.getString("User_Email", "");
     }
