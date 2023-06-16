@@ -9,6 +9,8 @@ import android.widget.Button;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.StorageReference;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +18,8 @@ public class TestActivity extends AppCompatActivity {
     Button btnAdd;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

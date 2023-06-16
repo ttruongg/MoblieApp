@@ -3,8 +3,11 @@ package com.example.mobileapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -16,6 +19,9 @@ import android.app.Dialog;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class ProductDetailActivity extends AppCompatActivity {
 
@@ -61,7 +67,21 @@ public class ProductDetailActivity extends AppCompatActivity {
                             String productname = document.getString("ProductName");
                             String description = document.getString("Description");
                             long price = document.getLong("Price");
+                            String image = document.getString("Picture");
+                            String Category = document.getString("Category");
 
+                            InputStream inputStream = null;
+                            try {
+                                inputStream = getAssets().open(Category + "/" + image +".jpg");
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                            Drawable drawable = Drawable.createFromStream(inputStream, null);
+                            Image.setImageDrawable(drawable);
+
+                            /*String imagePath = "/res/image/1.jpg"; // Ví dụ: "/sdcard/images/image_file_name.jpg"
+                            Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
+                            Image.setImageBitmap(bitmap);*/
                             Price.setText(String.valueOf(price));
                             ProductName.setText(productname);
                             Description.setText(description);
