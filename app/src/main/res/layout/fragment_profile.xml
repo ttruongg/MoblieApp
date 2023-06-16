@@ -23,7 +23,8 @@
             android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:srcCompat="@drawable/ic_user"
+            tools:srcCompat="@drawable/ic_user" />
 
         <TextView
             android:id="@+id/textView"
@@ -31,7 +32,6 @@
             android:layout_height="25dp"
             android:layout_marginStart="33dp"
             android:layout_marginTop="20dp"
-            android:text="Go Ri La"
             android:textSize="20dp"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -43,7 +43,6 @@
             android:layout_height="25dp"
             android:layout_marginStart="33dp"
             android:layout_marginTop="20dp"
-            android:text="0321542589"
             android:textSize="20dp"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -55,11 +54,11 @@
             android:layout_height="25dp"
             android:layout_marginStart="33dp"
             android:layout_marginTop="20dp"
-            android:text="Khu A dormitory, Thu Duc city"
-            android:textSize="15dp"
             android:textColor="@color/black"
+            android:textSize="15dp"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TextSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +33,10 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    ImageView imgPhone;
+    public ImageView imgPhone;
+    public ImageView imgLaptop;
+    public ImageView imgSound;
+    public ImageView imgOther;
 
     ImageView imgItem1;
 
@@ -73,9 +77,63 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         imgPhone = (ImageView) view.findViewById(R.id.imageView_MobileCategory);
+        imgLaptop = (ImageView) view.findViewById(R.id.imageView_LaptopCategory);
+        imgSound = (ImageView) view.findViewById(R.id.imageView_SoundCategory);
+        imgOther = (ImageView) view.findViewById(R.id.imageView_OtherCategory);
+
+
+        //laptop category
+        imgLaptop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentPhone = new Intent(getActivity(), ViewpageActivity.class);
+                String catid = "2";
+//                Chỗ này làm sao để lấy user_id từ login
+//                intentPhone.putExtra("user_id", id);
+                intentPhone.putExtra("category_id", catid);
+                startActivity(intentPhone);
+                Intent intent = new Intent(getActivity(), ViewpageActivity.class);
+                startActivity(intent);
+            }
+        });
+        //phone category
         imgPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intentPhone = new Intent(getActivity(), ViewpageActivity.class);
+                String catid = "2";
+//                Chỗ này làm sao để lấy user_id từ login
+//                intentPhone.putExtra("user_id", id);
+                intentPhone.putExtra("category_id", catid);
+                startActivity(intentPhone);
+                Intent intent = new Intent(getActivity(), ViewpageActivity.class);
+                startActivity(intent);
+            }
+        });
+        //sound category
+        imgSound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentPhone = new Intent(getActivity(), ViewpageActivity.class);
+                String catid = "3";
+//                Chỗ này làm sao để lấy user_id từ login
+//                intentPhone.putExtra("user_id", id);
+                intentPhone.putExtra("category_id", catid);
+                startActivity(intentPhone);
+                Intent intent = new Intent(getActivity(), ViewpageActivity.class);
+                startActivity(intent);
+            }
+        });
+        //other category
+        imgOther.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentPhone = new Intent(getActivity(), ViewpageActivity.class);
+                String catid = "4";
+//                Chỗ này làm sao để lấy user_id từ login
+//                intentPhone.putExtra("user_id", id);
+                intentPhone.putExtra("category_id", catid);
+                startActivity(intentPhone);
                 Intent intent = new Intent(getActivity(), ViewpageActivity.class);
                 startActivity(intent);
             }
