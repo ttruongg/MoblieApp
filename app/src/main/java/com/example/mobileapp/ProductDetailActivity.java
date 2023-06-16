@@ -1,8 +1,11 @@
 package com.example.mobileapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -10,40 +13,101 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.Dialog;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProductDetailActivity extends AppCompatActivity {
 
 
-    Button btnBuyNow;
+    Button btnBuyNow, btnAddToCart;
 
     ImageView Image;
-    TextView Price, ProductName, Description;
+    TextView txtPrice, txtProductName, txtDescription;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_product_detail);
         btnBuyNow = (Button) findViewById(R.id.button_buy_now);
+        btnAddToCart = (Button) findViewById(R.id.button_add_to_cart);
 
         Image = (ImageView) findViewById(R.id.image_product);
-        Price = (TextView) findViewById(R.id.text_view_product_price);
-        ProductName = (TextView) findViewById(R.id.text_view_product_name);
-        Description = (TextView) findViewById(R.id.text_view_product_title);
+        txtPrice = (TextView) findViewById(R.id.text_view_product_price);
+        txtProductName = (TextView) findViewById(R.id.text_view_product_name);
+        txtDescription = (TextView) findViewById(R.id.text_view_product_title);
 
         ShowDetail("Laptop Apple MacBook Air");
 
+        btnAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences preferences = getSharedPreferences("UserEmail", MODE_PRIVATE);
+                String userEmail = preferences.getString("User_Email", "");
+
+                String productName = txtProductName.getText().toString();
+                String price = txtPrice.getText().toString();
+
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                CollectionReference collectionProduct = db.collection("Product");
+
+                Query query = collectionProduct.whereEqualTo("ProductName", productName);
+                query.get()
+                        .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                                    String ProductId = documentSnapshot.getId();
+                                    // insert data into Cart
+                                    CollectionReference CartCollection = db.collection("Cart");
+
+                                    Map<String, Object> Cart = new HashMap<>();
+                                    Cart.put("Product_ID", ProductId);
+                                    Cart.put("Quantity", 1);
+                                    Cart.put("Email", userEmail);
+
+                                    db.collection("Cart").add(Cart);
+
+                                    Toast toast = Toast.makeText(ProductDetailActivity.this, "Successfully", Toast.LENGTH_SHORT);
+                                    toast.show();
+
+                                }
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Xử lý khi không thể lấy dữ liệu từ Firestore
+                            }
+                        });
+
+
+
+
+
+
+
+
+            }
+        });
 
         btnBuyNow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,12 +142,13 @@ public class ProductDetailActivity extends AppCompatActivity {
                             }
                             Drawable drawable = Drawable.createFromStream(inputStream, null);
                             Image.setImageDrawable(drawable);
-                            Price.setText(String.valueOf(price));
-                            ProductName.setText(productname);
-                            Description.setText(description);
+                            txtPrice.setText(String.valueOf(price));
+                            txtProductName.setText(productname);
+                            txtDescription.setText(description);
 
                         }
                     }
                 });
     }
+
 }
