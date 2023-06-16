@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -95,6 +96,14 @@ public class LoginActivity extends AppCompatActivity {
                                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                     intent.putExtra("user_id", id);
                                     startActivity(intent);
+
+
+                                    String EMAIL= document.getString("Email");
+
+                                    SharedPreferences preferences = getSharedPreferences("UserEmail", MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putString("User_Email", EMAIL);
+                                    editor.apply();
                                 } else{
                                     // thông báo sai mật khẩu
                                     dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.RED));

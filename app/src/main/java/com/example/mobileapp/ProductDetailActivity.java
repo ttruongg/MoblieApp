@@ -78,10 +78,6 @@ public class ProductDetailActivity extends AppCompatActivity {
                             }
                             Drawable drawable = Drawable.createFromStream(inputStream, null);
                             Image.setImageDrawable(drawable);
-
-                            /*String imagePath = "/res/image/1.jpg"; // Ví dụ: "/sdcard/images/image_file_name.jpg"
-                            Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
-                            Image.setImageBitmap(bitmap);*/
                             Price.setText(String.valueOf(price));
                             ProductName.setText(productname);
                             Description.setText(description);
