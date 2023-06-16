@@ -33,7 +33,7 @@ public class RegistationActivity extends AppCompatActivity {
     public FloatingActionButton btnBack;
     public Button btnSignUp;
     public TextView txtSignIn;
-    public EditText inputRegisEmail, inputRegisPass, inputRegisConfirmPass;
+    public EditText inputRegisEmail, inputRegisPass, inputRegisConfirmPass, inputRegisPhone, inputRegisAddress, inputRegisFullname;
     public boolean isValidEmail(String email) {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
@@ -57,6 +57,10 @@ public class RegistationActivity extends AppCompatActivity {
         inputRegisEmail = (EditText) findViewById(R.id.Input_RegisterEmail);
         inputRegisPass = (EditText) findViewById(R.id.Input_RegisterPassword);
         inputRegisConfirmPass = (EditText) findViewById(R.id.Input_ConfirmPassword);
+        inputRegisAddress = (EditText) findViewById(R.id.Input_Address);
+        inputRegisPhone = (EditText) findViewById(R.id.Input_Phone);
+        inputRegisFullname = (EditText) findViewById(R.id.Input_Fullname);
+
         btnBack.setOnClickListener(
             new View.OnClickListener()
             {
@@ -87,6 +91,9 @@ public class RegistationActivity extends AppCompatActivity {
                     String email = inputRegisEmail.getText().toString();
                     String pass = inputRegisPass.getText().toString();
                     String confirm = inputRegisConfirmPass.getText().toString();
+                    String phone = inputRegisPhone.getText().toString();
+                    String address = inputRegisAddress.getText().toString();
+                    String fullname = inputRegisFullname.getText().toString();
 
 
                     if(isValidEmail(email)){
@@ -123,6 +130,9 @@ public class RegistationActivity extends AppCompatActivity {
                                         Map<String, Object> user = new HashMap<>();
                                         user.put("Email", email);
                                         user.put("HashedPassword", hashedPassword);
+                                        user.put("Address", address);
+                                        user.put("FullName", fullname);
+                                        user.put("Phone", phone);
                                         // Add a new document with a generated ID
 
                                         //Thêm user vào db
