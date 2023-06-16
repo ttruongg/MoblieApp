@@ -7,7 +7,6 @@
     tools:context=".CartActivity"
     android:background="@color/light_blue">
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_CartTop"
         android:layout_width="wrap_content"
