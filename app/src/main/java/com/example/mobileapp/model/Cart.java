@@ -1,25 +1,25 @@
 package com.example.mobileapp.model;
 
 public class Cart {
-    private int ProductPicture;
+    private String ProductPicture;
     private String ProductName;
-    private int Quantity;
-    private int Price;
+    private String Quantity;
+    private String Price;
 
     public Cart(){}
 
-    public Cart(int productPicture, String productName, int quantity, int price) {
+    public Cart(String productPicture, String productName, String quantity, String price) {
         ProductPicture = productPicture;
         ProductName = productName;
         Quantity = quantity;
         Price = price;
     }
 
-    public int getProductPicture() {
+    public String getProductPicture() {
         return ProductPicture;
     }
 
-    public void setProductPicture(int productPicture) {
+    public void setProductPicture(String productPicture) {
         ProductPicture = productPicture;
     }
 
@@ -31,19 +31,19 @@ public class Cart {
         ProductName = productName;
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return Quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         Quantity = quantity;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return Price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         Price = price;
     }
 }
