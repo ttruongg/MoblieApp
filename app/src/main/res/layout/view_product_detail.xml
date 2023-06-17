@@ -26,13 +26,12 @@
             <!--price-->
             <TextView
                 android:id="@+id/text_view_product_price"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="25px"
                 android:fontFamily="sans-serif-black"
-                android:text="1.050.000"
-                android:textColor="@color/teal_blue"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/teal_blue"
                 android:textSize="100px"
                 tools:ignore="MissingConstraints" />
             <!--currency-->
@@ -42,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="25px"
                 android:fontFamily="sans-serif-medium"
-                android:text="VNĐ"
+                android:text="VND"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -59,7 +58,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15px"
                 android:fontFamily="sans-serif-condensed-medium"
-                android:text="MSI MPG Trident 3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="25sp"
                 android:typeface="normal"
@@ -79,7 +77,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="15px"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="MSI MPG Trident 3 10SC-005AU Intel i7 10700F, 2060 SUPER, 16GB RAM, 512GB SSD, 2TB HDD, Windows 10 Home, Gaming Keyboard and Mouse 3 Years Warranty Gaming Desktop"
             android:textSize="20sp" />
         <!--line-->
         <View
@@ -214,7 +211,8 @@
                             android:layout_marginEnd="14sp"
                             android:background="@drawable/add_to_cart_style"
                             android:text="Buy now"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#FFFFFF"
+                            tools:ignore="TouchTargetSizeCheck" />
 
                     </LinearLayout>
                     <!--button add to cart-->
@@ -232,7 +230,8 @@
                             android:layout_marginEnd="14sp"
                             android:background="@drawable/add_to_cart_style"
                             android:text="Add to cart"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#FFFFFF"
+                            tools:ignore="TouchTargetSizeCheck" />
                     </LinearLayout>
 
                 </LinearLayout>

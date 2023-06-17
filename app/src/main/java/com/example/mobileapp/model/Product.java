@@ -16,6 +16,7 @@ public class Product {
         Price = price;
     }
 
+
     public String getImage() {
         return Image;
     }
@@ -39,6 +40,5 @@ public class Product {
     public void setPrice(String price) {
         Price = price;
     }
-
 
 }

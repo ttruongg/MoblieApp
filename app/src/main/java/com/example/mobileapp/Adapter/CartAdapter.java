@@ -59,13 +59,9 @@ public class CartAdapter extends  RecyclerView.Adapter<CartAdapter.CartViewHolde
 
         holder.txtProductName.setText(cart.getProductName());
 
-        int quantity = cart.getQuantity();
-        String quantitystring = String.valueOf(quantity);
-        holder.txtQuantity.setText(quantitystring);
+        holder.txtQuantity.setText(cart.getQuantity());
 
-        int price = cart.getPrice();
-        String pricestring = String.valueOf(price);
-        holder.txtPrice.setText(pricestring);
+        holder.txtPrice.setText(cart.getPrice());
 
     }
 

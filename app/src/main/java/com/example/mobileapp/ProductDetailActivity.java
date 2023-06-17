@@ -1,5 +1,7 @@
 package com.example.mobileapp;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +15,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,7 +58,13 @@ public class ProductDetailActivity extends AppCompatActivity {
         txtProductName = (TextView) findViewById(R.id.text_view_product_name);
         txtDescription = (TextView) findViewById(R.id.text_view_product_title);
 
-        ShowDetail("Laptop Apple MacBook Air");
+        Intent intent = getIntent();
+        String productName = "";
+        if (intent != null) {
+            productName = intent.getStringExtra("product_name");
+        }
+        ShowDetail(productName);
+        Log.d(TAG,  " => " + productName);
 
         btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,21 +88,12 @@ public class ProductDetailActivity extends AppCompatActivity {
                                     // insert data into Cart
                                     CollectionReference CartCollection = db.collection("Cart");
 
-
-
-
-
-
-
-
-
-
                                     Map<String, Object> Cart = new HashMap<>();
                                     Cart.put("Product_ID", ProductId);
-                                    Cart.put("ProductName",productName);
-                                    Cart.put("Picture",1);
-                                    Cart.put("Price",price);
-                                    Cart.put("Quantity", 1);
+//                                    Cart.put("ProductName",productName);
+//                                    Cart.put("Picture",1);
+//                                    Cart.put("Price",price);
+                                    Cart.put("Quantity", "1");
                                     Cart.put("Email", userEmail);
 
                                     db.collection("Cart").add(Cart);
@@ -135,7 +135,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                         if (document.contains("ProductName")) {
                             String productname = document.getString("ProductName");
                             String description = document.getString("Description");
-                            long price = document.getLong("Price");
+                            String price = document.getString("ProductPrice");
                             String image = document.getString("Picture");
                             String Category = document.getString("Category");
 
@@ -147,7 +147,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                             }
                             Drawable drawable = Drawable.createFromStream(inputStream, null);
                             Image.setImageDrawable(drawable);
-                            txtPrice.setText(String.valueOf(price));
+                            txtPrice.setText(price);
                             txtProductName.setText(productname);
                             txtDescription.setText(description);
 

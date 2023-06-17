@@ -113,6 +113,53 @@ public class CartFragment extends Fragment {
 
     private List<Cart> getListCart() {
         List<Cart> list = new ArrayList<>();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String email = getEmail();
+        CollectionReference usersCollection = db.collection("Cart");
+        usersCollection.whereEqualTo("Email", email)
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            QuerySnapshot querySnapshot = task.getResult();
+                            if (querySnapshot != null) {
+                                List<DocumentSnapshot> documents = querySnapshot.getDocuments();
+
+                                for (DocumentSnapshot document : documents) {
+                                    String productID = document.getString("Product_ID");
+                                    String quantity = document.getString("Quantity");
+
+                                    CollectionReference collectionRef = db.collection("Product");
+                                    collectionRef.document(productID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document != null && document.exists()) {
+                                                    String productname = document.getString("ProductName");
+
+                                                    String productName = document.getString("ProductName");
+                                                    String price =document.getString("ProductPrice");
+                                                    String picture = document.getString("Picture");
+                                                    list.add(new Cart(picture, productName, quantity, price));
+                                                    cartAdapter.notifyDataSetChanged();
+                                                } else {
+                                                    Log.d("TAG", "Error getting document: ", task.getException());
+                                                }
+                                            } else {
+                                                Log.d("TAG", "Error getting document: ", task.getException());
+                                            }
+                                        }
+                                    });
+
+
+                                }
+                            }
+                        } else {
+                            Log.d("TAG", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
 
 
 
