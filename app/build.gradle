@@ -54,9 +54,14 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'org.mindrot:jbcrypt:0.4'
 
+<<<<<<< HEAD
 
     //
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation "androidx.cardview:cardview:1.0.0"
 
+=======
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
+    implementation "androidx.cardview:cardview:1.0.0"
+>>>>>>> master
 }
