@@ -112,9 +112,15 @@ public class CartFragment extends Fragment {
     }
 
     private List<Cart> getListCart() {
-
-
         List<Cart> list = new ArrayList<>();
+
+
+
+
+
+
+
+
 //
 //        list.add(new Cart (1, "Laptop1", 1, 10000)) ;
 //        list.add(new Cart (2, "Laptop2", 1, 10000)) ;

@@ -79,8 +79,20 @@ public class ProductDetailActivity extends AppCompatActivity {
                                     // insert data into Cart
                                     CollectionReference CartCollection = db.collection("Cart");
 
+
+
+
+
+
+
+
+
+
                                     Map<String, Object> Cart = new HashMap<>();
                                     Cart.put("Product_ID", ProductId);
+                                    Cart.put("ProductName",productName);
+                                    Cart.put("Picture",1);
+                                    Cart.put("Price",price);
                                     Cart.put("Quantity", 1);
                                     Cart.put("Email", userEmail);
 
