@@ -1,8 +1,12 @@
 package com.example.mobileapp.Adapter;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.ClipData;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mobileapp.ProductDetailActivity;
 import com.example.mobileapp.R;
 import com.example.mobileapp.model.Cart;
 import com.example.mobileapp.model.Product;
@@ -27,6 +32,9 @@ public class ProductAdapter  extends RecyclerView.Adapter<ProductAdapter.ViewHol
     private Context context;
     private List<Product> ListProduct;
 
+    public ProductAdapter(Context context) {
+        this.context = context;
+    }
 
     public void setData(List<Product> listProduct ){
         this.ListProduct = listProduct;
@@ -36,11 +44,30 @@ public class ProductAdapter  extends RecyclerView.Adapter<ProductAdapter.ViewHol
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product, parent,false);
+
+        return new ProductAdapter.ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        Product product = ListProduct.get(position);
+        if(product==null){
+            return;
+        }
+
+        InputStream inputStream = null;
+        try {
+            inputStream = context.getAssets().open( product.getImage() +".jpg");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Drawable drawable = Drawable.createFromStream(inputStream, null);
+        holder.productImg.setImageDrawable(drawable);
+
+        holder.ProductName.setText(product.getProductName());
+        holder.Price.setText(product.getPrice());
 
     }
 
@@ -49,7 +76,7 @@ public class ProductAdapter  extends RecyclerView.Adapter<ProductAdapter.ViewHol
         return ListProduct.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
         private ImageView productImg;
         private TextView ProductName;
         private TextView Price;
@@ -61,8 +88,16 @@ public class ProductAdapter  extends RecyclerView.Adapter<ProductAdapter.ViewHol
             ProductName = itemView.findViewById(R.id.txtproductName);
             Price = itemView.findViewById(R.id.txtPrice);
 
+            itemView.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View view) {
 
+            int position = getAdapterPosition();
+            Intent intent = new Intent(context, ProductDetailActivity.class);
+            intent.putExtra("product_name", ProductName.getText());
+            context.startActivities(new Intent[]{intent});
         }
     }
 
