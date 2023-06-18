@@ -138,13 +138,11 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intentPhone = new Intent(getActivity(), ViewpageActivity.class);
-                String catid = "2";
+                String catid = "1";
 //                Chỗ này làm sao để lấy user_id từ login
 //                intentPhone.putExtra("user_id", id);
                 intentPhone.putExtra("category_id", catid);
                 startActivity(intentPhone);
-                Intent intent = new Intent(getActivity(), ViewpageActivity.class);
-                startActivity(intent);
             }
         });
         //phone category
@@ -157,8 +155,7 @@ public class HomeFragment extends Fragment {
 //                intentPhone.putExtra("user_id", id);
                 intentPhone.putExtra("category_id", catid);
                 startActivity(intentPhone);
-                Intent intent = new Intent(getActivity(), ViewpageActivity.class);
-                startActivity(intent);
+
             }
         });
         //sound category
@@ -171,8 +168,7 @@ public class HomeFragment extends Fragment {
 //                intentPhone.putExtra("user_id", id);
                 intentPhone.putExtra("category_id", catid);
                 startActivity(intentPhone);
-                Intent intent = new Intent(getActivity(), ViewpageActivity.class);
-                startActivity(intent);
+
             }
         });
         //other category
@@ -185,8 +181,7 @@ public class HomeFragment extends Fragment {
 //                intentPhone.putExtra("user_id", id);
                 intentPhone.putExtra("category_id", catid);
                 startActivity(intentPhone);
-                Intent intent = new Intent(getActivity(), ViewpageActivity.class);
-                startActivity(intent);
+
             }
         });
 
