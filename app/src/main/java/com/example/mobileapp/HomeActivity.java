@@ -9,10 +9,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.mobileapp.fragment.ViewPageAdapter;
+import com.example.mobileapp.model.Product;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
+    public List<Product> productList;
     private ViewPager viewPager;
     private BottomNavigationView bottomNavigationView;
 
