@@ -98,7 +98,12 @@ public class ProductDetailActivity extends AppCompatActivity {
 
                                     db.collection("Cart").add(Cart);
 
-                                    Toast toast = Toast.makeText(ProductDetailActivity.this, "Successfully", Toast.LENGTH_SHORT);
+                                    LayoutInflater inflater = getLayoutInflater();
+                                    View layout = inflater.inflate(R.layout.custom_toast_layout, null);
+
+                                    Toast toast = new Toast(getApplicationContext());
+                                    toast.setDuration(Toast.LENGTH_SHORT);
+                                    toast.setView(layout);
                                     toast.show();
 
                                 }
