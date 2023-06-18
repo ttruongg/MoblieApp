@@ -103,6 +103,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
                                     Toast toast = new Toast(getApplicationContext());
                                     toast.setDuration(Toast.LENGTH_SHORT);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
                                     toast.setView(layout);
                                     toast.show();
 
