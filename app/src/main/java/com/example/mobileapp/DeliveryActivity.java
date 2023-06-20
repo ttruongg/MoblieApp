@@ -1,11 +1,15 @@
 package com.example.mobileapp;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +19,7 @@ import android.widget.TextView;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.protobuf.StringValue;
 
 import org.w3c.dom.Text;
 
@@ -22,27 +27,33 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class DeliveryActivity extends AppCompatActivity {
+    String tempPrice = "";
 
     Button btnNextDelivery;
-    TextView txtShippingFee;
+    TextView txtShippingFee, txtTotal;
     EditText edtName, edtPhone, edtAddress;
     RadioGroup RdoShipping;
+    long total;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery);
         btnNextDelivery = (Button) findViewById(R.id.btnNext);
         txtShippingFee = (TextView) findViewById(R.id.txtShippingFee);
+        txtTotal = (TextView) findViewById(R.id.txtTotal);
 
         edtName = (EditText) findViewById(R.id.editFullName);
         edtPhone = (EditText) findViewById(R.id.editPhone);
         edtAddress =(EditText) findViewById(R.id.editAdress);
         RdoShipping = (RadioGroup) findViewById(R.id.RdoShipping);
 
+        Intent intent_Receive = getIntent();
+        if (intent_Receive != null) {
+            tempPrice = intent_Receive.getStringExtra("Price_Product");
+        }
+        Log.d(TAG,"radio : "+ tempPrice);
         // function
         showInfoCustomer();
-
-
 
         btnNextDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,8 +62,6 @@ public class DeliveryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
         RdoShipping.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -66,13 +75,11 @@ public class DeliveryActivity extends AppCompatActivity {
                     case R.id.radioHoaToc:
                         txtShippingFee.setText("300000");
                         break;
-
-
-
-
                 }
             }
         });
+
+
     }
 
     private void showInfoCustomer(){
@@ -93,8 +100,6 @@ public class DeliveryActivity extends AppCompatActivity {
                             String fullname = document.getString("FullName");
                             String phone = document.getString("Phone");
                             String address = document.getString("Address");
-
-
                             edtName.setText(fullname);
                             edtPhone.setText(phone);
                             edtAddress.setText(address);
@@ -115,6 +120,18 @@ public class DeliveryActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    private void CalculateTotal(){
+
+        long number = Long.parseLong(tempPrice);
+        String tmp = String.valueOf(txtShippingFee.getText());
+        long shippingPrice = Long.parseLong(tmp);
+        long total = number + shippingPrice;
+
+        String finalTotal = String.valueOf(total);
+        txtTotal.setText(finalTotal);
 
     }
 }
