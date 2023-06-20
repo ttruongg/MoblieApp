@@ -223,14 +223,15 @@ public class ProductDetailActivity extends AppCompatActivity {
         });
 
 
-     btnAddToCart.setOnClickListener(new View.OnClickListener() {
-          @Override
-           public void onClick(View view) {
+        btnAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 SharedPreferences preferences = getSharedPreferences("UserEmail", MODE_PRIVATE);
                 String userEmail = preferences.getString("User_Email", "");
 
                 String productName = txtProductName.getText().toString();
                 String price = txtPrice.getText().toString();
+
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 CollectionReference collectionProduct = db.collection("Product");
 
@@ -240,29 +241,79 @@ public class ProductDetailActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                                 for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                                    String ProductId = documentSnapshot.getId();
-                                    // insert data into Cart
-                                    CollectionReference CartCollection = db.collection("Cart");
+                                    String productId = documentSnapshot.getId();
 
-                                    Map<String, Object> Cart = new HashMap<>();
-                                    Cart.put("Product_ID", ProductId);
-                                    Cart.put("Quantity", "1");
-                                    Cart.put("Email", userEmail);
+                                    // Kiểm tra sản phẩm trong giỏ hàng
+                                    CollectionReference cartCollection = db.collection("Cart");
+                                    Query cartQuery = cartCollection.whereEqualTo("Product_ID", productId)
+                                            .whereEqualTo("Email", userEmail);
 
-                                    db.collection("Cart").add(Cart);
+                                    cartQuery.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                                @Override
+                                                public void onSuccess(QuerySnapshot cartQuerySnapshot) {
+                                                    if (!cartQuerySnapshot.isEmpty()) {
+                                                        // Sản phẩm đã tồn tại trong giỏ hàng, tăng số lượng lên 1 đơn vị
+                                                        DocumentSnapshot cartDocument = cartQuerySnapshot.getDocuments().get(0);
+                                                        String cartId = cartDocument.getId();
+                                                        long quantity = Long.parseLong(cartDocument.getString("Quantity")) +1;
 
-                                    LayoutInflater inflater = getLayoutInflater();
-                                    View layout = inflater.inflate(R.layout.custom_toast_layout, null);
+                                                        // Cập nhật số lượng sản phẩm trong giỏ hàng
+                                                        cartCollection.document(cartId).update("Quantity", String.valueOf(quantity))
+                                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                    @Override
+                                                                    public void onSuccess(Void aVoid) {
+                                                                        LayoutInflater inflater = getLayoutInflater();
+                                                                        View layout = inflater.inflate(R.layout.custom_toast_layout, null);
+                                                                        Toast toast = new Toast(getApplicationContext());
+                                                                        toast.setDuration(Toast.LENGTH_SHORT);
+                                                                        toast.setGravity(Gravity.CENTER, 0, 0);
+                                                                        toast.setView(layout);
+                                                                        toast.show();
+                                                                    }
+                                                                })
+                                                                .addOnFailureListener(new OnFailureListener() {
+                                                                    @Override
+                                                                    public void onFailure(@NonNull Exception e) {
+                                                                        // Xử lý khi cập nhật không thành công
+                                                                    }
+                                                                });
+                                                    } else {
+                                                        // Sản phẩm chưa tồn tại trong giỏ hàng, thêm mới sản phẩm
+                                                        Map<String, Object> cartData = new HashMap<>();
+                                                        cartData.put("Product_ID", productId);
+                                                        cartData.put("Quantity", "1");
+                                                        cartData.put("Email", userEmail);
 
-                                    Toast toast = new Toast(getApplicationContext());
-                                    toast.setDuration(Toast.LENGTH_SHORT);
-                                    toast.setGravity(Gravity.CENTER, 0, 0);
-                                    toast.setView(layout);
-                                    toast.show();
-
+                                                        cartCollection.add(cartData)
+                                                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                                                    @Override
+                                                                    public void onSuccess(DocumentReference documentReference) {
+                                                                        LayoutInflater inflater = getLayoutInflater();
+                                                                        View layout = inflater.inflate(R.layout.custom_toast_layout, null);
+                                                                        Toast toast = new Toast(getApplicationContext());
+                                                                        toast.setDuration(Toast.LENGTH_SHORT);
+                                                                        toast.setGravity(Gravity.CENTER, 0, 0);
+                                                                        toast.setView(layout);
+                                                                        toast.show();
+                                                                    }
+                                                                })
+                                                                .addOnFailureListener(new OnFailureListener() {
+                                                                    @Override
+                                                                    public void onFailure(@NonNull Exception e) {
+                                                                        // Xử lý khi thêm mới không thành công
+                                                                    }
+                                                                });
+                                                    }
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    // Xử lý khi không thể truy vấn giỏ hàng
+                                                }
+                                            });
                                 }
                             }
-
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -270,7 +321,6 @@ public class ProductDetailActivity extends AppCompatActivity {
                                 // Xử lý khi không thể lấy dữ liệu từ Firestore
                             }
                         });
-
             }
         });
 
@@ -279,7 +329,7 @@ public class ProductDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent_Login = new Intent(ProductDetailActivity.this, DeliveryActivity.class);
-                intent.putExtra("Price_Product", txtPrice.getText().toString());
+                intent_Login.putExtra("Price_Product", txtPrice.getText().toString());
                 startActivity(intent_Login);
 
             }
