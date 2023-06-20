@@ -29,10 +29,12 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,6 +47,10 @@ public class HomeFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    public static List<Product> productInit;
+    public static List<Product> productFound;
+    private EditText editSearchText;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -59,7 +65,6 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView rcvProduct, rcvBestSellingProduct, rcvDiscountProduct;
     private ProductAdapter productAdapter, BestSellingProductAdapter, DiscountProductAdapter;
-    private EditText editSearchText;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -103,6 +108,7 @@ public class HomeFragment extends Fragment {
         imgSound = (ImageView) view.findViewById(R.id.imageView_SoundCategory);
         imgOther = (ImageView) view.findViewById(R.id.imageView_OtherCategory);
         editSearchText = view.findViewById(R.id.Input_Search_Home);
+        productInit = initListProductForSearchName();
 
         rcvProduct = view.findViewById(R.id.rcvProduct);
         productAdapter = new ProductAdapter(getActivity());
@@ -202,20 +208,14 @@ public class HomeFragment extends Fragment {
             @Override
             public boolean onKey(View view, int i, KeyEvent event) {
                 if(event.getKeyCode() == 66){
+
+                    String searchKey = editSearchText.getText().toString();
+                    productFound = productInit.stream()
+                            .filter(product -> (product.getProductName().toLowerCase().contains(searchKey.toLowerCase())))
+                            .collect(Collectors.toList());
+                    System.out.println(productFound);
                     Intent productSearchPage = new Intent(getActivity(), SearchResultActivity.class);
                     startActivity(productSearchPage);
-
-//                    List<Product> productListForSearchName = productSearch;
-//                    String searchKey = editSearchText.getText().toString();
-//                    productsFound = productListForSearchName.stream()
-//                            .filter(product -> (product.getProductName().toLowerCase().contains(searchKey.toLowerCase())))
-//                            .collect(Collectors.toList());
-//                    System.out.println(productListForSearchName.size());
-//                    System.out.println(searchKey);
-//                    System.out.println(productsFound.size());
-//
-//                    productSearchAdapter.setData(productsFound);
-//                    rcvSearchProduct.setAdapter(productSearchAdapter);
                 }
                 return true;
             }
@@ -315,6 +315,29 @@ public class HomeFragment extends Fragment {
         });
 
         return productList;
+    }
+
+    public List<Product> initListProductForSearchName(){
+        List<Product> products1 = new ArrayList<>();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference collectionProduct = db.collection("Product");
+        collectionProduct.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Product product = new Product(
+                                document.getString("Picture"),
+                                document.getString("ProductName"),
+                                document.getString("Price"));
+                        products1.add(product);
+                    }
+                } else {
+                    Log.d("ERROR", "Error getting documents: ", task.getException());
+                }
+            }
+        });
+        return products1;
     }
 
 }
