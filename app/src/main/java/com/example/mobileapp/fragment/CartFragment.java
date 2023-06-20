@@ -54,6 +54,8 @@ public class CartFragment extends Fragment {
 
     private CartAdapter cartAdapter;
     private TextView totalPrice;
+
+    private String ProductInfo = "";
     public CartFragment() {
         // Required empty public constructor
     }
@@ -112,6 +114,7 @@ public class CartFragment extends Fragment {
                 startActivity(intent);*/
                 Intent intent_Login = new Intent(getActivity(), DeliveryActivity.class);
                 intent_Login.putExtra("Price_Product", String.valueOf(sum));
+                intent_Login.putExtra("ProductInfo", ProductInfo);
                 startActivity(intent_Login);
             }
         });
@@ -149,6 +152,7 @@ public class CartFragment extends Fragment {
                                                     String productName = document.getString("ProductName");
                                                     String price =document.getString("ProductPrice");
                                                     String picture = document.getString("Picture");
+                                                    ProductInfo=ProductInfo+"Product name: " + productName + "\n Quantity: " + quantity + "\n";
                                                     list.add(new Cart(picture, productName, quantity, price));
                                                     cartAdapter.notifyDataSetChanged();
                                                 } else {

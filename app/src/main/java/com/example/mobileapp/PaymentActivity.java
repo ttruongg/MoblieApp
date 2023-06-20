@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class PaymentActivity extends AppCompatActivity {
 
-    String temporaryPrice ="", ShipFee = "", TotalPrice ="", PaymentMethod ="", DeliveryMethod ="";
+    String temporaryPrice ="", ShipFee = "", TotalPrice ="", PaymentMethod ="", DeliveryMethod ="", ProductInfo="";
     Button btnNextPayment;
     TextView textViewTemFee, textViewTranFee, textViewTotalFee;
     RadioGroup RdoPaymentMethod;
@@ -36,6 +36,7 @@ public class PaymentActivity extends AppCompatActivity {
             ShipFee = intent_Receive.getStringExtra("ShipFee");
             TotalPrice = intent_Receive.getStringExtra("Total_Price");
             DeliveryMethod = intent_Receive.getStringExtra("Delevery_Method");
+            ProductInfo = intent_Receive.getStringExtra("ProductInfo");
         }
 
         textViewTemFee.setText(temporaryPrice);
@@ -71,6 +72,7 @@ public class PaymentActivity extends AppCompatActivity {
                 intent.putExtra("Total_Price", TotalPrice);
                 intent.putExtra("Payment_Method", PaymentMethod);
                 intent.putExtra("Delevery_Method", DeliveryMethod);
+                intent.putExtra("ProductInfo", ProductInfo);
                 startActivity(intent);
             }
         });

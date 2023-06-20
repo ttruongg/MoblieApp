@@ -47,7 +47,6 @@ public class SearchProductActivity extends AppCompatActivity {
         if (intent != null) {
             search_text = intent.getStringExtra("search_text");
         }
-        Log.d(TAG, "DocumentSnapshot added with ID123: " + search_text);
 
 
         searchproductAdapter.setData(getListProduct());

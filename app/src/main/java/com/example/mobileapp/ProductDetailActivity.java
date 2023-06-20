@@ -47,6 +47,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     ImageView Image, imgFavorite;
     TextView txtPrice, txtProductName, txtDescription;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    String ProductInfo="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +61,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         txtProductName = (TextView) findViewById(R.id.text_view_product_name);
         txtDescription = (TextView) findViewById(R.id.text_view_product_title);
 
+
+
         Intent intent = getIntent();
         String productName = "";
         if (intent != null) {
@@ -67,6 +70,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         }
         ShowDetail(productName);
         Log.d(TAG,  " => " + productName);
+
+        ProductInfo = "Product name: " + productName + "\n Quantity: 1";
 
         btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -330,6 +335,7 @@ public class ProductDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent_Login = new Intent(ProductDetailActivity.this, DeliveryActivity.class);
                 intent_Login.putExtra("Price_Product", txtPrice.getText().toString());
+                intent_Login.putExtra("ProductInfo", ProductInfo);
                 startActivity(intent_Login);
 
             }

@@ -59,18 +59,18 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="100dp"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="10dp"
             app:cardCornerRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewConfirm1">
+            app:layout_constraintTop_toBottomOf="@+id/textViewConfirm1" >
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/ListOfProduct"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
+            <TextView
+                android:id="@+id/txtProductInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
         </androidx.cardview.widget.CardView>
 
 
