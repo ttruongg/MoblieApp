@@ -109,6 +109,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
                                 }
                             }
+
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -147,7 +148,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
                             InputStream inputStream = null;
                             try {
-                                inputStream = getAssets().open(  image +".jpg");
+                                inputStream = getAssets().open(image +".jpg");
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }

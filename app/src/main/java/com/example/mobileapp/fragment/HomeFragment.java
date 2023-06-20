@@ -13,16 +13,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.mobileapp.Adapter.CartAdapter;
 import com.example.mobileapp.Adapter.ProductAdapter;
+import com.example.mobileapp.HomeActivity;
+import com.example.mobileapp.LoginActivity;
 import com.example.mobileapp.ProductDetailActivity;
 import com.example.mobileapp.R;
+import com.example.mobileapp.SearchProductActivity;
 import com.example.mobileapp.ViewpageActivity;
 import com.example.mobileapp.model.Cart;
 import com.example.mobileapp.model.Product;
@@ -62,6 +67,7 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView rcvProduct, rcvBestSellingProduct, rcvDiscountProduct;
     private ProductAdapter productAdapter, BestSellingProductAdapter, DiscountProductAdapter;
+    private EditText editSearchText;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -104,6 +110,7 @@ public class HomeFragment extends Fragment {
         imgLaptop = (ImageView) view.findViewById(R.id.imageView_LaptopCategory);
         imgSound = (ImageView) view.findViewById(R.id.imageView_SoundCategory);
         imgOther = (ImageView) view.findViewById(R.id.imageView_OtherCategory);
+        editSearchText = view.findViewById(R.id.Input_Search_Home);
 
         rcvProduct = view.findViewById(R.id.rcvProduct);
         productAdapter = new ProductAdapter(getActivity());
@@ -132,6 +139,22 @@ public class HomeFragment extends Fragment {
 
         DiscountProductAdapter.setData(getDiscountProduct());
         rcvDiscountProduct.setAdapter(DiscountProductAdapter);
+
+        editSearchText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if (i == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
+                    // Xử lý sự kiện khi nhấn phím "Enter"
+                    Intent intent = new Intent(getActivity(), SearchProductActivity.class);
+                    intent.putExtra("search_text", editSearchText.getText().toString());
+                    Log.d(TAG, "DocumentSnapshot added with ID: " + editSearchText.getText().toString());
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
+
 
         //laptop category
         imgLaptop.setOnClickListener(new View.OnClickListener() {
