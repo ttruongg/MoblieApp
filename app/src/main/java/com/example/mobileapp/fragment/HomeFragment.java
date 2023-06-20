@@ -1,10 +1,8 @@
 package com.example.mobileapp.fragment;
 
-import static android.content.ContentValues.TAG;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,18 +11,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.example.mobileapp.Adapter.CartAdapter;
 import com.example.mobileapp.Adapter.ProductAdapter;
-import com.example.mobileapp.ProductDetailActivity;
 import com.example.mobileapp.R;
+import com.example.mobileapp.SearchResultActivity;
 import com.example.mobileapp.ViewpageActivity;
-import com.example.mobileapp.model.Cart;
 import com.example.mobileapp.model.Product;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -62,6 +59,7 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView rcvProduct, rcvBestSellingProduct, rcvDiscountProduct;
     private ProductAdapter productAdapter, BestSellingProductAdapter, DiscountProductAdapter;
+    private EditText editSearchText;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -104,6 +102,7 @@ public class HomeFragment extends Fragment {
         imgLaptop = (ImageView) view.findViewById(R.id.imageView_LaptopCategory);
         imgSound = (ImageView) view.findViewById(R.id.imageView_SoundCategory);
         imgOther = (ImageView) view.findViewById(R.id.imageView_OtherCategory);
+        editSearchText = view.findViewById(R.id.Input_Search_Home);
 
         rcvProduct = view.findViewById(R.id.rcvProduct);
         productAdapter = new ProductAdapter(getActivity());
@@ -113,7 +112,6 @@ public class HomeFragment extends Fragment {
 
         rcvDiscountProduct = view.findViewById(R.id.rcvDiscountProduct);
         DiscountProductAdapter = new ProductAdapter(getActivity());
-
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
         rcvProduct.setLayoutManager(linearLayoutManager);
@@ -198,6 +196,30 @@ public class HomeFragment extends Fragment {
 //                startActivity(intent);
 //            }
 //        });
+
+        editSearchText.setOnKeyListener(new View.OnKeyListener() {
+            //do search when click enter key
+            @Override
+            public boolean onKey(View view, int i, KeyEvent event) {
+                if(event.getKeyCode() == 66){
+                    Intent productSearchPage = new Intent(getActivity(), SearchResultActivity.class);
+                    startActivity(productSearchPage);
+
+//                    List<Product> productListForSearchName = productSearch;
+//                    String searchKey = editSearchText.getText().toString();
+//                    productsFound = productListForSearchName.stream()
+//                            .filter(product -> (product.getProductName().toLowerCase().contains(searchKey.toLowerCase())))
+//                            .collect(Collectors.toList());
+//                    System.out.println(productListForSearchName.size());
+//                    System.out.println(searchKey);
+//                    System.out.println(productsFound.size());
+//
+//                    productSearchAdapter.setData(productsFound);
+//                    rcvSearchProduct.setAdapter(productSearchAdapter);
+                }
+                return true;
+            }
+        });
 
         return view;
     }
@@ -294,4 +316,5 @@ public class HomeFragment extends Fragment {
 
         return productList;
     }
+
 }

@@ -5,27 +5,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 import com.example.mobileapp.fragment.ViewPageAdapter;
-import com.example.mobileapp.model.Product;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
-    public List<Product> productList;
+    ListView listView;
     private ViewPager viewPager;
     private BottomNavigationView bottomNavigationView;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
 
         viewPager = findViewById(R.id.view_pager);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -54,10 +55,6 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-
-
-
-
     }
+
 }
