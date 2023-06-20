@@ -40,8 +40,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="125dp"
+        android:layout_width="414dp"
+        android:layout_height="142dp"
         android:layout_marginTop="8dp"
         android:background="@color/light_blue"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,28 +62,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtChange_Delivery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="Change"
-            android:textColor="@color/second_blue"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/fullname"
             android:layout_width="79dp"
-            android:layout_height="32dp"
+            android:layout_height="20dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="56dp"
+            android:layout_marginTop="16dp"
             android:text="Full name:"
             android:textColor="@color/black"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtInformation" />
 
@@ -92,6 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:text="Number phone:"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -99,45 +88,52 @@
             app:layout_constraintTop_toBottomOf="@+id/fullname" />
 
         <TextView
-            android:id="@+id/txtName"
-            android:layout_width="245dp"
-            android:layout_height="27dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="4dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/phone"
-            app:layout_constraintStart_toEndOf="@+id/fullname" />
-
-        <TextView
-            android:id="@+id/txtNumberPhone"
-            android:layout_width="245dp"
-            android:layout_height="27dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:text="TextView"
-            app:layout_constraintStart_toEndOf="@+id/phone"
-            app:layout_constraintTop_toBottomOf="@+id/txtName" />
-
-        <TextView
             android:id="@+id/Address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="Address: "
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phone" />
 
-        <TextView
-            android:id="@+id/txtAddress"
-            android:layout_width="245dp"
-            android:layout_height="27dp"
-            android:layout_marginStart="44dp"
-            android:text="TextView"
+        <EditText
+            android:id="@+id/editFullName"
+            android:layout_width="220dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="37dp"
+            android:layout_marginTop="34dp"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="13dp"
+            app:layout_constraintStart_toEndOf="@+id/fullname"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editPhone"
+            android:layout_width="220dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="18dp"
+            android:ems="10"
+            android:textSize="13dp"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@+id/phone"
+            app:layout_constraintTop_toBottomOf="@+id/editFullName" />
+
+        <EditText
+            android:id="@+id/editAdress"
+            android:layout_width="220dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="56dp"
+            android:ems="10"
+            android:textSize="13dp"
+            android:inputType="text"
             app:layout_constraintStart_toEndOf="@+id/Address"
-            app:layout_constraintTop_toBottomOf="@+id/txtNumberPhone" />
+            app:layout_constraintTop_toBottomOf="@+id/editPhone" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -164,10 +160,10 @@
 
         <RadioGroup
             android:id="@+id/RdoShipping"
-            android:layout_width="match_parent"
-            android:layout_height="136dp"
+            android:layout_width="392dp"
+            android:layout_height="164dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Shipping">
 
@@ -194,69 +190,36 @@
 
         </RadioGroup>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="385dp"
-            android:layout_height="65dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/RdoShipping" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout5"
         android:layout_width="match_parent"
         android:layout_height="78dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/edit_text_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/Tenporary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="10dp"
-            android:text="Temporary fee: "
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txtTemporary"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="312dp"
-            tools:layout_editor_absoluteY="10dp" />
-
-        <TextView
             android:id="@+id/ShippingFee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="13dp"
             android:text="Shipping Fee:"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Tenporary" />
+            tools:layout_editor_absoluteY="30dp" />
 
         <TextView
             android:id="@+id/txtShippingFee"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="210dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginStart="220dp"
             app:layout_constraintStart_toEndOf="@+id/ShippingFee"
-            app:layout_constraintTop_toBottomOf="@+id/txtTemporary" />
+            tools:layout_editor_absoluteY="30dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -278,8 +241,8 @@
         android:id="@+id/txtTotal"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="244dp"
-        android:layout_marginTop="556dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="580dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/total"
         app:layout_constraintTop_toTopOf="parent" />
@@ -289,7 +252,7 @@
         android:layout_width="108dp"
         android:layout_height="48dp"
         android:layout_marginStart="151dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="152dp"
         android:background="@drawable/edit_text_bg"
         android:text="Next"
