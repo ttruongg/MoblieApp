@@ -37,12 +37,20 @@
             <!--currency-->
             <TextView
                 android:id="@+id/text_view_currency"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25px"
                 android:fontFamily="sans-serif-medium"
                 android:text="VND"
                 android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/imgFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/btn_star_big_on" />
+
 
         </LinearLayout>
         <!--product name-->
@@ -54,7 +62,7 @@
 
             <TextView
                 android:id="@+id/text_view_product_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15px"
                 android:fontFamily="sans-serif-condensed-medium"
@@ -63,12 +71,7 @@
                 android:typeface="normal"
                 tools:ignore="MissingConstraints" />
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
+
         </LinearLayout>
 
         <TextView

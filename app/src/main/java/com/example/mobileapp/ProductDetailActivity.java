@@ -43,7 +43,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
     Button btnBuyNow, btnAddToCart;
 
-    ImageView Image;
+    ImageView Image, imgFavorite;
     TextView txtPrice, txtProductName, txtDescription;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
@@ -52,6 +52,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         setContentView(R.layout.view_product_detail);
         btnBuyNow = (Button) findViewById(R.id.button_buy_now);
         btnAddToCart = (Button) findViewById(R.id.button_add_to_cart);
+        imgFavorite = (ImageView) findViewById(R.id.imgFavorite);
 
         Image = (ImageView) findViewById(R.id.image_product);
         txtPrice = (TextView) findViewById(R.id.text_view_product_price);
@@ -121,11 +122,66 @@ public class ProductDetailActivity extends AppCompatActivity {
             }
         });
 
+        imgFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences preferences = getSharedPreferences("UserEmail", MODE_PRIVATE);
+                String userEmail = preferences.getString("User_Email", "");
+
+                String productName = txtProductName.getText().toString();
+                String price = txtPrice.getText().toString();
+
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                CollectionReference collectionProduct = db.collection("Product");
+
+                Query query = collectionProduct.whereEqualTo("ProductName", productName);
+                query.get()
+                        .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                                    String ProductId = documentSnapshot.getId();
+                                    CollectionReference CartCollection = db.collection("Favorite");
+
+                                    Map<String, Object> Favorite = new HashMap<>();
+                                    Favorite.put("Product_ID", ProductId);
+                                    Favorite.put("Quantity", "1");
+                                    Favorite.put("Email", userEmail);
+
+                                    db.collection("Favorite").add(Favorite);
+
+                                    LayoutInflater inflater = getLayoutInflater();
+                                    View layout = inflater.inflate(R.layout.custom_toast_layout, null);
+
+                                    Toast toast = new Toast(getApplicationContext());
+                                    toast.setDuration(Toast.LENGTH_SHORT);
+                                    toast.setGravity(Gravity.CENTER, 0, 0);
+                                    toast.setView(layout);
+                                    toast.show();
+
+                                }
+                            }
+
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Xử lý khi không thể lấy dữ liệu từ Firestore
+                            }
+                        });
+
+
+            }
+        });
+
+
         btnBuyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent_Login = new Intent(ProductDetailActivity.this, DeliveryActivity.class);
+                intent.putExtra("Price_Product", txtPrice.getText().toString());
                 startActivity(intent_Login);
+
             }
         });
     }

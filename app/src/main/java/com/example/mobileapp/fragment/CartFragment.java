@@ -161,24 +161,6 @@ public class CartFragment extends Fragment {
                     }
                 });
 
-
-
-
-
-
-
-
-//
-//        list.add(new Cart (1, "Laptop1", 1, 10000)) ;
-//        list.add(new Cart (2, "Laptop2", 1, 10000)) ;
-//        list.add(new Cart (3, "Laptop3", 1, 10000)) ;
-//        list.add(new Cart (4, "Laptop4", 1, 10000)) ;
-//
-//        list.add(new Cart (1, "Laptop1", 1, 10000)) ;
-//        list.add(new Cart (2, "Laptop2", 1, 10000)) ;
-//        list.add(new Cart (3, "Laptop3", 1, 10000)) ;
-//        list.add(new Cart (4, "Laptop4", 1, 10000)) ;
-
         return list;
     }
 
