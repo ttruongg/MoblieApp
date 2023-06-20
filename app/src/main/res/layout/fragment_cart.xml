@@ -70,11 +70,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".75"
-                android:text="22.000.000VND"
+                android:textColor="@color/black"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/button3"
                 app:layout_constraintTop_toTopOf="parent" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
