@@ -27,7 +27,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class DeliveryActivity extends AppCompatActivity {
-    String tempPrice = "", DeliveryMethod = "";
+    String tempPrice = "", DeliveryMethod = "", ProductInfo="";
 
     Button btnNextDelivery;
     TextView txtShippingFee, txtTotal, txtTemporary;
@@ -51,6 +51,7 @@ public class DeliveryActivity extends AppCompatActivity {
         Intent intent_Receive = getIntent();
         if (intent_Receive != null) {
             tempPrice = intent_Receive.getStringExtra("Price_Product");
+            ProductInfo = intent_Receive.getStringExtra("ProductInfo");
         }
 
         txtTemporary.setText(tempPrice);
@@ -67,6 +68,7 @@ public class DeliveryActivity extends AppCompatActivity {
                 intent.putExtra("ShipFee", txtShippingFee.getText().toString());
                 intent.putExtra("Total_Price", txtTotal.getText().toString());
                 intent.putExtra("Delevery_Method", DeliveryMethod);
+                intent.putExtra("ProductInfo", ProductInfo);
                 startActivity(intent);
             }
         });

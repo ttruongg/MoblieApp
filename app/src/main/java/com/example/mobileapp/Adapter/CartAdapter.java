@@ -1,7 +1,9 @@
 package com.example.mobileapp.Adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobileapp.R;
 import com.example.mobileapp.model.Cart;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -79,6 +87,7 @@ public class CartAdapter extends  RecyclerView.Adapter<CartAdapter.CartViewHolde
         private TextView txtProductName;
         private TextView txtQuantity;
         private TextView txtPrice;
+        private TextView Delete;
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,6 +96,15 @@ public class CartAdapter extends  RecyclerView.Adapter<CartAdapter.CartViewHolde
             txtProductName = itemView.findViewById(R.id.txtProductName);
             txtQuantity = itemView.findViewById(R.id.txtQuantity);
             txtPrice = itemView.findViewById(R.id.txtPrice);
+            Delete = itemView.findViewById(R.id.Delete);
+            Delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
         }
     }
+
+
 }

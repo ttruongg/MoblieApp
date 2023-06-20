@@ -1,6 +1,7 @@
 package com.example.mobileapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mobileapp.ProductDetailActivity;
 import com.example.mobileapp.R;
 import com.example.mobileapp.model.Cart;
 import com.example.mobileapp.model.Favorite;
@@ -84,6 +86,15 @@ public class FavoriteAdapter extends  RecyclerView.Adapter<FavoriteAdapter.Favor
             imgItem = itemView.findViewById(R.id.imgProduct);
             txtProductName = itemView.findViewById(R.id.txtProductName);
             txtPrice = itemView.findViewById(R.id.txtPrice);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    Intent intent = new Intent(context, ProductDetailActivity.class);
+                    intent.putExtra("product_name", txtProductName.getText());
+                    context.startActivities(new Intent[]{intent});
+                }
+            });
         }
     }
 }
