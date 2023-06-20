@@ -97,24 +97,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/ChangeDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="10dp"
-            android:text="Change"
-            android:textColor="@color/second_blue"
-            android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TextSizeCheck" />
-
-        <TextView
             android:id="@+id/textViewDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name - Phone"
             android:textColor="@color/black"
-            android:textSize="30dp"
+            android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewConfirm2" />
 
@@ -122,7 +109,6 @@
             android:id="@+id/textViewAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Address"
             android:textColor="@color/black"
             android:textSize="15dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -152,22 +138,9 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/ChangeDelivery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="10dp"
-            android:text="Change"
-            android:textColor="@color/second_blue"
-            android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TextSizeCheck" />
-
-        <TextView
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Economical delivery"
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -196,23 +169,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/ChangePayment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="10dp"
-            android:text="Change"
-            android:textColor="@color/second_blue"
-            android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TextSizeCheck" />
-
-        <TextView
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_search_bar_bg"
-            android:text="Cash payment"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -245,7 +206,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:text="TextView"
             android:textAlignment="textEnd"
             android:textColor="@color/black"
             android:textSize="20dp"
@@ -267,7 +227,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:text="TextView"
             android:textAlignment="textEnd"
             android:textColor="@color/black"
             android:textSize="20dp"
@@ -299,7 +258,6 @@
             android:id="@+id/textViewTotalFee2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
             android:textAlignment="textEnd"
             android:textColor="@color/black"
             android:textSize="20dp"

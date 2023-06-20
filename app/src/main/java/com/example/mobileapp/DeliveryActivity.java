@@ -27,13 +27,13 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class DeliveryActivity extends AppCompatActivity {
-    String tempPrice = "";
+    String tempPrice = "", DeliveryMethod = "";
 
     Button btnNextDelivery;
-    TextView txtShippingFee, txtTotal;
+    TextView txtShippingFee, txtTotal, txtTemporary;
     EditText edtName, edtPhone, edtAddress;
     RadioGroup RdoShipping;
-    long total;
+    int total;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +41,7 @@ public class DeliveryActivity extends AppCompatActivity {
         btnNextDelivery = (Button) findViewById(R.id.btnNext);
         txtShippingFee = (TextView) findViewById(R.id.txtShippingFee);
         txtTotal = (TextView) findViewById(R.id.txtTotal);
+        txtTemporary = (TextView) findViewById(R.id.txtTemporaryPrice);
 
         edtName = (EditText) findViewById(R.id.editFullName);
         edtPhone = (EditText) findViewById(R.id.editPhone);
@@ -51,7 +52,10 @@ public class DeliveryActivity extends AppCompatActivity {
         if (intent_Receive != null) {
             tempPrice = intent_Receive.getStringExtra("Price_Product");
         }
-        Log.d(TAG,"radio : "+ tempPrice);
+
+        txtTemporary.setText(tempPrice);
+
+        //Log.d(TAG,"radio : "+ tempPrice);
         // function
         showInfoCustomer();
 
@@ -59,6 +63,10 @@ public class DeliveryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DeliveryActivity.this, PaymentActivity.class);
+                intent.putExtra("TemporaryPrice", tempPrice);
+                intent.putExtra("ShipFee", txtShippingFee.getText().toString());
+                intent.putExtra("Total_Price", txtTotal.getText().toString());
+                intent.putExtra("Delevery_Method", DeliveryMethod);
                 startActivity(intent);
             }
         });
@@ -66,15 +74,24 @@ public class DeliveryActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i){
-                    case R.id.radioFast:
+                    case R.id.radioFast: {
                         txtShippingFee.setText("150000");
+                        DeliveryMethod = "Fast";
+                        TotalPrice();
                         break;
-                    case R.id.radioVeryFast:
+                    }
+                    case R.id.radioVeryFast: {
                         txtShippingFee.setText("200000");
+                        DeliveryMethod = "Very Fast";
+                        TotalPrice();
                         break;
-                    case R.id.radioHoaToc:
+                    }
+                    case R.id.radioHoaToc: {
                         txtShippingFee.setText("300000");
+                        DeliveryMethod = "Express";
+                        TotalPrice();
                         break;
+                    }
                 }
             }
         });
@@ -107,31 +124,20 @@ public class DeliveryActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
 
+    private void TotalPrice(){
 
+        int number = Integer.parseInt(tempPrice);
+        String ShipFee = txtShippingFee.getText().toString();
+        int ShipFeeNumber = Integer.parseInt(ShipFee);
 
+        int total = number + ShipFeeNumber;
 
-
-
-
-
-
-
-
-
+        txtTotal.setText(String.valueOf(total));
 
 
     }
 
-    private void CalculateTotal(){
 
-        long number = Long.parseLong(tempPrice);
-        String tmp = String.valueOf(txtShippingFee.getText());
-        long shippingPrice = Long.parseLong(tmp);
-        long total = number + shippingPrice;
-
-        String finalTotal = String.valueOf(total);
-        txtTotal.setText(finalTotal);
-
-    }
 }

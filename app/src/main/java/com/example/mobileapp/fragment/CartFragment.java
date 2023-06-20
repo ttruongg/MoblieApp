@@ -107,9 +107,12 @@ public class CartFragment extends Fragment {
         btnBuyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), DeliveryActivity.class);
+               /* Intent intent = new Intent(getActivity(), DeliveryActivity.class);
                 intent.putExtra("total_price", sum);
-                startActivity(intent);
+                startActivity(intent);*/
+                Intent intent_Login = new Intent(getActivity(), DeliveryActivity.class);
+                intent_Login.putExtra("Price_Product", String.valueOf(sum));
+                startActivity(intent_Login);
             }
         });
 
