@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.mobileapp.Adapter.CartAdapter;
 import com.example.mobileapp.DeliveryActivity;
@@ -52,6 +53,7 @@ public class CartFragment extends Fragment {
     private RecyclerView rcvCart;
 
     private CartAdapter cartAdapter;
+    private TextView totalPrice;
     public CartFragment() {
         // Required empty public constructor
     }
@@ -99,11 +101,14 @@ public class CartFragment extends Fragment {
         cartAdapter.setData(getListCart());
         rcvCart.setAdapter(cartAdapter);
 
+        totalPrice = view.findViewById(R.id.textView_PaymentValue);
+        calculateTotalPrice();
 
         btnBuyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), DeliveryActivity.class);
+                intent.putExtra("total_price", sum);
                 startActivity(intent);
             }
         });
@@ -160,30 +165,67 @@ public class CartFragment extends Fragment {
                         }
                     }
                 });
-
-
-
-
-
-
-
-
-//
-//        list.add(new Cart (1, "Laptop1", 1, 10000)) ;
-//        list.add(new Cart (2, "Laptop2", 1, 10000)) ;
-//        list.add(new Cart (3, "Laptop3", 1, 10000)) ;
-//        list.add(new Cart (4, "Laptop4", 1, 10000)) ;
-//
-//        list.add(new Cart (1, "Laptop1", 1, 10000)) ;
-//        list.add(new Cart (2, "Laptop2", 1, 10000)) ;
-//        list.add(new Cart (3, "Laptop3", 1, 10000)) ;
-//        list.add(new Cart (4, "Laptop4", 1, 10000)) ;
-
         return list;
     }
 
     private String getEmail() {
         SharedPreferences preferences = getActivity().getSharedPreferences("UserEmail", Context.MODE_PRIVATE);
         return preferences.getString("User_Email", "");
+    }
+
+    public int sum;
+
+    private void calculateTotalPrice() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String email = getEmail();
+        CollectionReference usersCollection = db.collection("Cart");
+        usersCollection.whereEqualTo("Email", email)
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            QuerySnapshot querySnapshot = task.getResult();
+                            if (querySnapshot != null) {
+                                List<DocumentSnapshot> documents = querySnapshot.getDocuments();
+
+                                //int sum = 0; // Khởi tạo biến sum ở đây
+
+                                for (DocumentSnapshot document : documents) {
+                                    // Lấy dữ liệu từ Firebase
+                                    String productID = document.getString("Product_ID");
+                                    String quantity = document.getString("Quantity");
+                                    CollectionReference collectionRef = db.collection("Product");
+                                    collectionRef.document(productID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                DocumentSnapshot document = task.getResult();
+                                                if (document != null && document.exists()) {
+                                                    String price = document.getString("ProductPrice");
+                                                    int intQuantity = Integer.parseInt(quantity);
+                                                    int intPrice = Integer.parseInt(price);
+                                                    int total = intPrice * intQuantity;
+                                                    sum = sum + total;
+                                                    processTotalPrice(sum);
+                                                } else {
+                                                    Log.d("TAG", "Error getting document: ", task.getException());
+                                                }
+                                            } else {
+                                                Log.d("TAG", "Error getting document: ", task.getException());
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                        } else {
+                            Log.d("TAG", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+    }
+
+    private void processTotalPrice(int totalprice) {
+        Log.d("TAG", "Total price: " + totalprice);
+        totalPrice.setText(String.valueOf(totalprice));
     }
 }
